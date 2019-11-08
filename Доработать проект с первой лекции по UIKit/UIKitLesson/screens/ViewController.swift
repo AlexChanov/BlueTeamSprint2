@@ -43,6 +43,7 @@ class ViewController: UIViewController, Coordinatable {
 
 		view.addSubview(button)
 		view.addSubview(circle)
+        
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(redCircleTapped))
 		circle.addGestureRecognizer(tapGesture)
 		button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)

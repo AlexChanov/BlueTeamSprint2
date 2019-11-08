@@ -14,6 +14,7 @@
 		367F45332350E94100E4816A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F45322350E94100E4816A /* GradientView.swift */; };
 		367F45352350FD4E00E4816A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F45342350FD4E00E4816A /* SecondViewController.swift */; };
 		36D4FD2D2371F68800D70360 /* CoordinatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D4FD2C2371F68800D70360 /* CoordinatingController.swift */; };
+		78A7FF872375A9E900842A7E /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7FF862375A9E900842A7E /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		367F45322350E94100E4816A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		367F45342350FD4E00E4816A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		36D4FD2C2371F68800D70360 /* CoordinatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatingController.swift; sourceTree = "<group>"; };
+		78A7FF862375A9E900842A7E /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,9 @@
 		367F45142350DE5200E4816A = {
 			isa = PBXGroup;
 			children = (
+				78D3EBFD23744ED60024331A /* screens */,
+				78D3EBFE23744F320024331A /* model */,
+				367F45272350DE5300E4816A /* Assets.xcassets */,
 				367F451F2350DE5200E4816A /* UIKitLesson */,
 				367F451E2350DE5200E4816A /* Products */,
 			);
@@ -59,15 +64,29 @@
 			isa = PBXGroup;
 			children = (
 				367F45202350DE5200E4816A /* AppDelegate.swift */,
-				36D4FD2C2371F68800D70360 /* CoordinatingController.swift */,
-				367F45342350FD4E00E4816A /* SecondViewController.swift */,
-				367F45222350DE5200E4816A /* ViewController.swift */,
-				367F45322350E94100E4816A /* GradientView.swift */,
-				367F45272350DE5300E4816A /* Assets.xcassets */,
 				367F45292350DE5300E4816A /* LaunchScreen.storyboard */,
 				367F452C2350DE5300E4816A /* Info.plist */,
 			);
 			path = UIKitLesson;
+			sourceTree = "<group>";
+		};
+		78D3EBFD23744ED60024331A /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				367F45222350DE5200E4816A /* ViewController.swift */,
+				367F45342350FD4E00E4816A /* SecondViewController.swift */,
+				78A7FF862375A9E900842A7E /* ThirdViewController.swift */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		78D3EBFE23744F320024331A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				36D4FD2C2371F68800D70360 /* CoordinatingController.swift */,
+				367F45322350E94100E4816A /* GradientView.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +163,7 @@
 				367F45232350DE5200E4816A /* ViewController.swift in Sources */,
 				36D4FD2D2371F68800D70360 /* CoordinatingController.swift in Sources */,
 				367F45212350DE5200E4816A /* AppDelegate.swift in Sources */,
+				78A7FF872375A9E900842A7E /* ThirdViewController.swift in Sources */,
 				367F45332350E94100E4816A /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,17 +302,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7TA2J96WKV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIKitLesson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DK.UIKitLesson;
+				PRODUCT_BUNDLE_IDENTIFIER = UIKitLesson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -300,17 +322,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7TA2J96WKV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIKitLesson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DK.UIKitLesson;
+				PRODUCT_BUNDLE_IDENTIFIER = UIKitLesson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
