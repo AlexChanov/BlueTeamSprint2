@@ -13,7 +13,7 @@ class ThirdViewController: UIViewController {
     let circle: GradientView = {
         let view = GradientView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         view.layer.cornerRadius = 50
-        view.colors = UIColor.randomGradientColor()
+        view.colors = UIColor.gradientColorFor(view.center, size: view.bounds.size)
         return view
     }()
     
@@ -42,9 +42,8 @@ class ThirdViewController: UIViewController {
     }
     
     @objc private func draggingView (_ sender: UIPanGestureRecognizer) {
-        let point = sender.location(in: view)
-        circle.center = point
-        circle.colors = UIColor.randomGradientColor()
+        circle.center = sender.location(in: view)
+        circle.colors = UIColor.gradientColorFor(circle.center, size: view.bounds.size)
     }
     
 }
