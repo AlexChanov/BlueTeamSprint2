@@ -27,4 +27,5 @@ final class GradientView: UIView {
 	func update() {
 		gradientLayer.colors = colors.compactMap { $0.cgColor }
 	}
+    
 }

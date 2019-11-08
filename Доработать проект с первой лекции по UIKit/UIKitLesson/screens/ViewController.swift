@@ -12,12 +12,6 @@ class ViewController: UIViewController, Coordinatable {
 
 	weak var delegate: Coordinator?
 
-	override func loadView() {
-		let gradientView = GradientView()
-		gradientView.colors = [.yellow, .green]
-		view = gradientView
-	}
-
 	var gradientView: GradientView {
 		return view as! GradientView
 	}
@@ -37,6 +31,13 @@ class ViewController: UIViewController, Coordinatable {
 		return view
 	}()
 
+    
+    override func loadView() {
+        let gradientView = GradientView()
+        gradientView.colors = [.yellow, .green]
+        view = gradientView
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .red
@@ -60,29 +61,13 @@ class ViewController: UIViewController, Coordinatable {
 		button.center = view.center
 	}
 
-	private func randomGradientColor() -> [UIColor] {
-		return [UIColor.random(), UIColor.random()]
-	}
 
 	@objc private func redCircleTapped() {
 		delegate?.change(self)
 	}
 
 	@objc private func buttonTapped() {
-		gradientView.colors = randomGradientColor()
+		gradientView.colors = UIColor.randomGradientColor()
 	}
+    
 }
-
-extension UIColor {
-
-	static func random() -> UIColor {
-		let red = CGFloat(Float.random(in: 0...255) / 255)
-		let green = CGFloat(Float.random(in: 0...255) / 255)
-		let blue = CGFloat(Float.random(in: 0...255) / 255)
-		return UIColor(red: red,
-					   green: green,
-					   blue: blue,
-					   alpha: 1)
-	}
-}
-

@@ -16,7 +16,9 @@ protocol Coordinator: AnyObject {
 	func change(_ current: UIViewController)
 }
 
+
 final class CoordinatingController: UIViewController {
+    
 	let navController = UINavigationController()
 
 	init(with first: UIViewController) {
@@ -28,7 +30,10 @@ final class CoordinatingController: UIViewController {
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+    
 }
+
+
 
 extension CoordinatingController: Coordinator {
 
@@ -39,4 +44,5 @@ extension CoordinatingController: Coordinator {
 	private func resolveDestination(from viewController: UIViewController) -> UIViewController {
 		return SecondViewController()
 	}
+    
 }
