@@ -39,6 +39,7 @@ class NewNoteViewController: UIViewController {
     @objc
     func saveTapped() {
         delegate.count += 1
+        delegate.notesList.append(textView.text)
         navigationController?.popViewController(animated: true)
     }
     
