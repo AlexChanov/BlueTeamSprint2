@@ -20,8 +20,9 @@ class NotesTableViewCell: UITableViewCell {
         notesLabel.translatesAutoresizingMaskIntoConstraints = false
         notesLabel.center = self.contentView.center
         notesLabel.textAlignment = .left
-        notesLabel.lineBreakMode = .byWordWrapping
+        notesLabel.lineBreakMode = .byTruncatingTail
         notesLabel.numberOfLines = 0
+        notesLabel.adjustsFontSizeToFitWidth = false
         contentView.addSubview(notesLabel)
         notesLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive            = true
         notesLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5).isActive      = true
