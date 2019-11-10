@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CE273A923781EB600198E7F /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE273A823781EB600198E7F /* NotesTableViewCell.swift */; };
+		1CE273AB2378499000198E7F /* FullContentOfNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE273AA2378499000198E7F /* FullContentOfNoteViewController.swift */; };
 		C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294042375D0C80077AD8A /* MyTabBarController.swift */; };
 		C94294072375D22D0077AD8A /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294062375D22D0077AD8A /* TasksViewController.swift */; };
 		C94294092375D2350077AD8A /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294082375D2350077AD8A /* NotesViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1CE273A823781EB600198E7F /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
+		1CE273AA2378499000198E7F /* FullContentOfNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullContentOfNoteViewController.swift; sourceTree = "<group>"; };
 		C94294042375D0C80077AD8A /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		C94294062375D22D0077AD8A /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C94294082375D2350077AD8A /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CE273AC23784DC000198E7F /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				C94294082375D2350077AD8A /* NotesViewController.swift */,
+				1CE273AA2378499000198E7F /* FullContentOfNoteViewController.swift */,
+				1CE273A823781EB600198E7F /* NotesTableViewCell.swift */,
+				C942940C2375DA830077AD8A /* NewNoteViewController.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		C952FAE52375EC2F009DB26C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +112,8 @@
 			children = (
 				C94294042375D0C80077AD8A /* MyTabBarController.swift */,
 				C94294062375D22D0077AD8A /* TasksViewController.swift */,
-				C94294082375D2350077AD8A /* NotesViewController.swift */,
-				1CE273A823781EB600198E7F /* NotesTableViewCell.swift */,
-				C942940C2375DA830077AD8A /* NewNoteViewController.swift */,
 				C942940A2375D23F0077AD8A /* SettingsViewController.swift */,
+				1CE273AC23784DC000198E7F /* Notes */,
 			);
 			path = "Main Screens";
 			sourceTree = "<group>";
@@ -200,6 +211,7 @@
 				C960C51F2375A5D7002703DC /* RootViewController.swift in Sources */,
 				C942940D2375DA830077AD8A /* NewNoteViewController.swift in Sources */,
 				C960C50D2375A54F002703DC /* AppDelegate.swift in Sources */,
+				1CE273AB2378499000198E7F /* FullContentOfNoteViewController.swift in Sources */,
 				C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

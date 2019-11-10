@@ -25,17 +25,16 @@ class NotesViewController: UIViewController {
     }
     
     let tableView = UITableView()
-      
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "Заметки"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeTapped))
         setupLayout()
-
-
         
+
     }
     
     @objc
@@ -49,31 +48,38 @@ class NotesViewController: UIViewController {
         
     }
     
-   private func setupLayout() {
-    self.view.addSubview(tableView)
-    tableView.translatesAutoresizingMaskIntoConstraints = false
-    tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive               = true
-    tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive        = true
-    tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive                     = true
-    tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive                   = true
-    tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive                     = true
-    tableView.translatesAutoresizingMaskIntoConstraints = false
-    tableView.layer.borderWidth = 0.5
-    tableView.layer.borderColor = UIColor.black.cgColor
-    tableView.separatorStyle = .singleLine
-    tableView.rowHeight = 100
-    tableView.dataSource = self
-    tableView.delegate = self
-    tableView.register(NotesTableViewCell.self, forCellReuseIdentifier: NotesTableViewCell.reuseId)
+    private func setupLayout() {
+        self.view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive               = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive        = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive                     = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive                   = true
+        tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive                     = true
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.layer.borderWidth = 0.5
+        tableView.layer.borderColor = UIColor.black.cgColor
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 100
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(NotesTableViewCell.self, forCellReuseIdentifier: NotesTableViewCell.reuseId)
     }
     
-
 }
 
 
+//MARK: - TableViewDelegate, TableViewDataSource
 
 extension NotesViewController : UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let fullNote = FullContentOfNoteViewController()
+        fullNote.note = notesList[indexPath.row]
+        navigationController?.pushViewController(fullNote, animated: true)
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notesList.count
@@ -85,7 +91,7 @@ extension NotesViewController : UITableViewDelegate, UITableViewDataSource {
         
         let note = notesList[indexPath.row]
         
-        cell.notesLabel.text = note
+        cell.notesLabel.text = "\(indexPath.row + 1). \(note)"
         
         return cell 
     }

@@ -9,9 +9,9 @@
 import UIKit
 
 class NotesTableViewCell: UITableViewCell {
-
+    
     public static let reuseId = "notesCell"
-
+    
     public let notesLabel = UILabel()
     
     
@@ -39,11 +39,11 @@ class NotesTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

@@ -24,7 +24,7 @@ class NewNoteViewController: UIViewController {
         view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +51,7 @@ class NewNoteViewController: UIViewController {
         textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive                     = true
     }
     
-
     
-
+    
+    
 }
