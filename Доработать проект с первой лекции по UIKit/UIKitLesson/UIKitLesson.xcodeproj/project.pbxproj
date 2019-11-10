@@ -29,6 +29,7 @@
 		36D4FD2C2371F68800D70360 /* CoordinatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatingController.swift; sourceTree = "<group>"; };
 		78A4457C2375BB05009FAD1A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		78A7FF862375A9E900842A7E /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		78FF26C02376CC0200F98F9E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = UIKitLesson/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 			children = (
 				367F45202350DE5200E4816A /* AppDelegate.swift */,
 				367F45292350DE5300E4816A /* LaunchScreen.storyboard */,
+				78FF26C02376CC0200F98F9E /* Info.plist */,
 			);
 			path = UIKitLesson;
 			sourceTree = "<group>";
