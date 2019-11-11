@@ -8,46 +8,43 @@
 
 import UIKit
 
-class NotesViewController: UIViewController {
-    
-    var count = 0 {
-        didSet {
-            navigationItem.title = "Заметки \(count)"
-        }
-    }
-    
-    var notesList: [String] = [] {
-        didSet{
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    let tableView = UITableView()
-    
-    
-    override func viewDidLoad() {
+public class NotesViewController: UIViewController {
+	// MARK: - Model
+	var notesList: [String] = [] {
+		didSet{
+			navigationItem.title = "Заметки: \(oldValue.count + 1)"
+			tableView.reloadData()
+		}
+	}
+	// MARK: - UI
+	private let tableView: UITableView = {
+		let tableView = UITableView()
+		tableView.translatesAutoresizingMaskIntoConstraints = false
+		tableView.estimatedRowHeight = 10
+		tableView.rowHeight = UITableView.automaticDimension
+		tableView.separatorStyle = .none
+		tableView.backgroundColor = .white
+		tableView.register(NotesTableViewCell.self, forCellReuseIdentifier: NotesTableViewCell.reuseIdentifier)
+		return tableView
+	}()
+	// MARK: - lifecycle
+	override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "Заметки"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeTapped))
         setupLayout()
-        
-
+		tableView.dataSource = self
+		tableView.delegate = self
     }
-    
+	// MARK: - Selector
     @objc
     func composeTapped() {
-        let newNoteVC = NewNoteViewController()
+        let newNoteVC = EditNoteViewController()
         newNoteVC.delegate = self
         navigationController?.pushViewController(newNoteVC, animated: true)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
+	// MARK: - Layout
     private func setupLayout() {
         self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,46 +52,37 @@ class NotesViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive        = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive                     = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive                   = true
-        tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive                     = true
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.layer.borderWidth = 0.5
-        tableView.layer.borderColor = UIColor.black.cgColor
-        tableView.separatorStyle = .none
-        tableView.rowHeight = 100
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(NotesTableViewCell.self, forCellReuseIdentifier: NotesTableViewCell.reuseId)
     }
-    
 }
 
+//MARK: - TableViewDataSource
+extension NotesViewController :  UITableViewDataSource {
+	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return notesList.count
+	}
 
-//MARK: - TableViewDelegate, TableViewDataSource
+	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: NotesTableViewCell.reuseIdentifier, for: indexPath) as! NotesTableViewCell
+		let note = notesList[indexPath.row]
+		cell.notesLabel.text = "\(indexPath.row + 1). \(note)"
+		return cell
+	}
+}
 
-extension NotesViewController : UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let fullNote = FullContentOfNoteViewController()
-        fullNote.note = notesList[indexPath.row]
-        navigationController?.pushViewController(fullNote, animated: true)
-        
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notesList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: NotesTableViewCell.reuseId, for: indexPath) as! NotesTableViewCell
-        
-        let note = notesList[indexPath.row]
-        
-        cell.notesLabel.text = "\(indexPath.row + 1). \(note)"
-        
-        return cell 
-    }
-    
-    
+// MARK: - TableViewDelegate
+extension NotesViewController:UITableViewDelegate {
+	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let cell = tableView.cellForRow(at: indexPath) as! NotesTableViewCell
+		cell.changeConstraint()
+		cell.layoutIfNeeded()
+		tableView.beginUpdates()
+		tableView.endUpdates()
+		cell.setSelected(false, animated: true)
+	}
+}
+// MARK: - Text data protocol
+extension NotesViewController:TextDataUpdateProtocol {
+	public func addText(data text: String) {
+		notesList.append(text)
+	}
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CE273A923781EB600198E7F /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE273A823781EB600198E7F /* NotesTableViewCell.swift */; };
-		1CE273AB2378499000198E7F /* FullContentOfNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE273AA2378499000198E7F /* FullContentOfNoteViewController.swift */; };
+		A438A175237986EE000651BE /* TextDataUpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */; };
 		A4EC3DC023794020003764C9 /* NestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */; };
 		A4EC3DC123794020003764C9 /* UsefulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB823794020003764C9 /* UsefulCell.swift */; };
 		A4EC3DC223794020003764C9 /* AddButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB923794020003764C9 /* AddButtonViewController.swift */; };
@@ -21,7 +21,7 @@
 		C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294042375D0C80077AD8A /* MyTabBarController.swift */; };
 		C94294092375D2350077AD8A /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294082375D2350077AD8A /* NotesViewController.swift */; };
 		C942940B2375D23F0077AD8A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942940A2375D23F0077AD8A /* SettingsViewController.swift */; };
-		C942940D2375DA830077AD8A /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942940C2375DA830077AD8A /* NewNoteViewController.swift */; };
+		C942940D2375DA830077AD8A /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942940C2375DA830077AD8A /* EditNoteViewController.swift */; };
 		C952FAE72375ECAF009DB26C /* UserDefaults+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C952FAE62375ECAF009DB26C /* UserDefaults+helpers.swift */; };
 		C960C50D2375A54F002703DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C50C2375A54F002703DC /* AppDelegate.swift */; };
 		C960C5142375A555002703DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C960C5132375A555002703DC /* Assets.xcassets */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		1CE273A823781EB600198E7F /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
-		1CE273AA2378499000198E7F /* FullContentOfNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullContentOfNoteViewController.swift; sourceTree = "<group>"; };
+		A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDataUpdateProtocol.swift; sourceTree = "<group>"; };
 		A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedTableViewCell.swift; sourceTree = "<group>"; };
 		A4EC3DB823794020003764C9 /* UsefulCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulCell.swift; sourceTree = "<group>"; };
 		A4EC3DB923794020003764C9 /* AddButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		C94294042375D0C80077AD8A /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		C94294082375D2350077AD8A /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		C942940A2375D23F0077AD8A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		C942940C2375DA830077AD8A /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		C942940C2375DA830077AD8A /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 		C952FAE62375ECAF009DB26C /* UserDefaults+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+helpers.swift"; sourceTree = "<group>"; };
 		C960C5092375A54F002703DC /* AppStructure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStructure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C50C2375A54F002703DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,9 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				C94294082375D2350077AD8A /* NotesViewController.swift */,
-				1CE273AA2378499000198E7F /* FullContentOfNoteViewController.swift */,
 				1CE273A823781EB600198E7F /* NotesTableViewCell.swift */,
-				C942940C2375DA830077AD8A /* NewNoteViewController.swift */,
+				C942940C2375DA830077AD8A /* EditNoteViewController.swift */,
+				A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -244,11 +244,11 @@
 				A4EC3DC123794020003764C9 /* UsefulCell.swift in Sources */,
 				C94294092375D2350077AD8A /* NotesViewController.swift in Sources */,
 				A4EC3DC623794020003764C9 /* TasksCollectionViewController.swift in Sources */,
+				A438A175237986EE000651BE /* TextDataUpdateProtocol.swift in Sources */,
 				C960C51F2375A5D7002703DC /* RootViewController.swift in Sources */,
-				C942940D2375DA830077AD8A /* NewNoteViewController.swift in Sources */,
+				C942940D2375DA830077AD8A /* EditNoteViewController.swift in Sources */,
 				A4EC3DC223794020003764C9 /* AddButtonViewController.swift in Sources */,
 				C960C50D2375A54F002703DC /* AppDelegate.swift in Sources */,
-				1CE273AB2378499000198E7F /* FullContentOfNoteViewController.swift in Sources */,
 				A4EC3DC523794020003764C9 /* HasCustomViewProtocol.swift in Sources */,
 				A4EC3DC423794020003764C9 /* AddButtonView.swift in Sources */,
 				C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */,

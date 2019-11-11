@@ -8,9 +8,10 @@
 
 import UIKit
 
-class NewNoteViewController: UIViewController {
+class EditNoteViewController: UIViewController {
     
-    weak var delegate: NotesViewController!
+    var delegate: TextDataUpdateProtocol!
+	var note:String? = nil
     
     lazy var textView: UITextView = {
         let view = UITextView()
@@ -18,7 +19,7 @@ class NewNoteViewController: UIViewController {
         view.textAlignment = .left
         view.textColor = .black
         view.font = UIFont.systemFont(ofSize: 18)
-        view.isEditable = true
+        view.isEditable = false
         view.isScrollEnabled = true
         view.layer.borderWidth = 0.5
         view.layer.borderColor = UIColor.black.cgColor
@@ -27,31 +28,32 @@ class NewNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveTapped))
-        
         view.backgroundColor = .white
-        view.addSubview(textView)
-        setupLayout()
         
+        setupLayout()
+		if note == nil {
+			 navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveTapped))
+			textView.isEditable = true
+			textView.becomeFirstResponder()
+		} else {
+			navigationItem.title = "Содержание заметки"
+			textView.text = note!
+		}
     }
-    
     @objc
     func saveTapped() {
-        delegate.count += 1
-        delegate.notesList.append(textView.text)
-        navigationController?.popViewController(animated: true)
+		guard textView.text.count != 0 else {
+			return
+		}
+		delegate.addText(data: textView.text)
+		navigationController?.popViewController(animated: true)
     }
-    
     private func setupLayout() {
-        textView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive               = true
+        view.addSubview(textView)
+		textView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive               = true
         textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive        = true
         textView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive                     = true
         textView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive                   = true
         textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive                     = true
     }
-    
-    
-    
-    
 }

@@ -10,7 +10,9 @@ import UIKit
 // MARK: - Class
 public class NestedTableViewCell:UITableViewCell {
 	// MARK: - Properties
-	static let reuseIdentifier = "NestedCell"
+	static var reuseIdentifier:String {
+		return "NestedCell"
+	}
 	
 	// MARK: - Init
 	override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,7 +37,7 @@ public class NestedTableViewCell:UITableViewCell {
 		return textField
 	}()
 	// helper
-	private let textFieldBackgroundView: UIView = {
+	public let textFieldBackgroundView: UIView = {
 		let view = UIView()
 		view.translatesAutoresizingMaskIntoConstraints = false
 		view.backgroundColor = .white
