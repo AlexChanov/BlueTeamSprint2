@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2899DD52375F9BF00B284DB /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2899DD02375F9BF00B284DB /* NotesTableViewController.swift */; };
+		D2899DD62375F9BF00B284DB /* HasCustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2899DD12375F9BF00B284DB /* HasCustomViewProtocol.swift */; };
+		D2899DD72375F9BF00B284DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2899DD22375F9BF00B284DB /* AppDelegate.swift */; };
+		D2899DD82375F9BF00B284DB /* TasksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2899DD32375F9BF00B284DB /* TasksCollectionViewController.swift */; };
+		D2899DD92375F9BF00B284DB /* TemporaryTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2899DD42375F9BF00B284DB /* TemporaryTabBarViewController.swift */; };
+		D2899DDC2375FC5300B284DB /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2899DDB2375FC5300B284DB /* TasksView.swift */; };
+		D2899DDE2375FE1600B284DB /* UsefulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2899DDD2375FE1600B284DB /* UsefulCell.swift */; };
+		D2D535252375EFA900D973F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D535242375EFA900D973F9 /* Assets.xcassets */; };
+		D2D535282375EFA900D973F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D535262375EFA900D973F9 /* LaunchScreen.storyboard */; };
+		D2D9318B2378890E000B99A8 /* AddButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9318A2378890E000B99A8 /* AddButtonViewController.swift */; };
+		D2D9318E2378AAC4000B99A8 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9318D2378AAC4000B99A8 /* AddButtonView.swift */; };
+		D2D931902378B828000B99A8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9318F2378B828000B99A8 /* ListViewController.swift */; };
+		D2D931932378B88E000B99A8 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D931922378B88E000B99A8 /* ListView.swift */; };
+		D2D931952378C91F000B99A8 /* NestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D931942378C91F000B99A8 /* NestedTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D2899DD02375F9BF00B284DB /* NotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		D2899DD12375F9BF00B284DB /* HasCustomViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasCustomViewProtocol.swift; sourceTree = "<group>"; };
+		D2899DD22375F9BF00B284DB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D2899DD32375F9BF00B284DB /* TasksCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewController.swift; sourceTree = "<group>"; };
+		D2899DD42375F9BF00B284DB /* TemporaryTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryTabBarViewController.swift; sourceTree = "<group>"; };
+		D2899DDB2375FC5300B284DB /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		D2899DDD2375FE1600B284DB /* UsefulCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsefulCell.swift; sourceTree = "<group>"; };
+		D2D5351A2375EFA900D973F9 /* TrelloCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrelloCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D535242375EFA900D973F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2D535272375EFA900D973F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2D535292375EFA900D973F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2D9318A2378890E000B99A8 /* AddButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonViewController.swift; sourceTree = "<group>"; };
+		D2D9318D2378AAC4000B99A8 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		D2D9318F2378B828000B99A8 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D2D931922378B88E000B99A8 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		D2D931942378C91F000B99A8 /* NestedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2D535172375EFA900D973F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D2899DDA2375FC4600B284DB /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				D2899DD32375F9BF00B284DB /* TasksCollectionViewController.swift */,
+				D2899DDB2375FC5300B284DB /* TasksView.swift */,
+				D2899DE12375FE3800B284DB /* Cells */,
+				D2D9318C2378AAB3000B99A8 /* AddButton */,
+				D2D931912378B859000B99A8 /* Tasks */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		D2899DE12375FE3800B284DB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2899DDD2375FE1600B284DB /* UsefulCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D2D535112375EFA900D973F9 = {
+			isa = PBXGroup;
+			children = (
+				D2D5351C2375EFA900D973F9 /* TrelloCollectionView */,
+				D2D5351B2375EFA900D973F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2D5351B2375EFA900D973F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2D5351A2375EFA900D973F9 /* TrelloCollectionView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2D5351C2375EFA900D973F9 /* TrelloCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D2899DD22375F9BF00B284DB /* AppDelegate.swift */,
+				D2899DD12375F9BF00B284DB /* HasCustomViewProtocol.swift */,
+				D2899DD02375F9BF00B284DB /* NotesTableViewController.swift */,
+				D2899DDA2375FC4600B284DB /* Tasks */,
+				D2899DD42375F9BF00B284DB /* TemporaryTabBarViewController.swift */,
+				D2D535242375EFA900D973F9 /* Assets.xcassets */,
+				D2D535262375EFA900D973F9 /* LaunchScreen.storyboard */,
+				D2D535292375EFA900D973F9 /* Info.plist */,
+			);
+			path = TrelloCollectionView;
+			sourceTree = "<group>";
+		};
+		D2D9318C2378AAB3000B99A8 /* AddButton */ = {
+			isa = PBXGroup;
+			children = (
+				D2D9318A2378890E000B99A8 /* AddButtonViewController.swift */,
+				D2D9318D2378AAC4000B99A8 /* AddButtonView.swift */,
+			);
+			path = AddButton;
+			sourceTree = "<group>";
+		};
+		D2D931912378B859000B99A8 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				D2D9318F2378B828000B99A8 /* ListViewController.swift */,
+				D2D931922378B88E000B99A8 /* ListView.swift */,
+				D2D931942378C91F000B99A8 /* NestedTableViewCell.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2D535192375EFA900D973F9 /* TrelloCollectionView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2D5352C2375EFA900D973F9 /* Build configuration list for PBXNativeTarget "TrelloCollectionView" */;
+			buildPhases = (
+				D2D535162375EFA900D973F9 /* Sources */,
+				D2D535172375EFA900D973F9 /* Frameworks */,
+				D2D535182375EFA900D973F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrelloCollectionView;
+			productName = TrelloCollectionView;
+			productReference = D2D5351A2375EFA900D973F9 /* TrelloCollectionView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2D535122375EFA900D973F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Graf Jenkins";
+				TargetAttributes = {
+					D2D535192375EFA900D973F9 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D2D535152375EFA900D973F9 /* Build configuration list for PBXProject "TrelloCollectionView" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2D535112375EFA900D973F9;
+			productRefGroup = D2D5351B2375EFA900D973F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2D535192375EFA900D973F9 /* TrelloCollectionView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2D535182375EFA900D973F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2D535282375EFA900D973F9 /* LaunchScreen.storyboard in Resources */,
+				D2D535252375EFA900D973F9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2D535162375EFA900D973F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2D9318B2378890E000B99A8 /* AddButtonViewController.swift in Sources */,
+				D2899DD72375F9BF00B284DB /* AppDelegate.swift in Sources */,
+				D2899DDC2375FC5300B284DB /* TasksView.swift in Sources */,
+				D2899DDE2375FE1600B284DB /* UsefulCell.swift in Sources */,
+				D2899DD62375F9BF00B284DB /* HasCustomViewProtocol.swift in Sources */,
+				D2899DD52375F9BF00B284DB /* NotesTableViewController.swift in Sources */,
+				D2D931952378C91F000B99A8 /* NestedTableViewCell.swift in Sources */,
+				D2899DD92375F9BF00B284DB /* TemporaryTabBarViewController.swift in Sources */,
+				D2D9318E2378AAC4000B99A8 /* AddButtonView.swift in Sources */,
+				D2D931932378B88E000B99A8 /* ListView.swift in Sources */,
+				D2D931902378B828000B99A8 /* ListViewController.swift in Sources */,
+				D2899DD82375F9BF00B284DB /* TasksCollectionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D2D535262375EFA900D973F9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2D535272375EFA900D973F9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2D5352A2375EFA900D973F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D2D5352B2375EFA900D973F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2D5352D2375EFA900D973F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TrelloCollectionView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gjenkins.TrelloCollectionView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D2D5352E2375EFA900D973F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TrelloCollectionView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gjenkins.TrelloCollectionView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2D535152375EFA900D973F9 /* Build configuration list for PBXProject "TrelloCollectionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2D5352A2375EFA900D973F9 /* Debug */,
+				D2D5352B2375EFA900D973F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2D5352C2375EFA900D973F9 /* Build configuration list for PBXNativeTarget "TrelloCollectionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2D5352D2375EFA900D973F9 /* Debug */,
+				D2D5352E2375EFA900D973F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2D535122375EFA900D973F9 /* Project object */;
+}
