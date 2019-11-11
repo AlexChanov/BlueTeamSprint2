@@ -30,6 +30,7 @@ public class TasksCollectionView: UIView {
 		collectionView.backgroundColor = .white
 		collectionView.register(UsefulCell.self, forCellWithReuseIdentifier: "Tasks")
 		collectionView.register(UsefulCell.self, forCellWithReuseIdentifier: UsefulCell.reuseIdentifier)
+		collectionView.contentInsetAdjustmentBehavior = .never
 		return collectionView
 	}()
 }
