@@ -23,7 +23,7 @@ public class AddButtonView: UIView {
 								  toItem: nil,
 								  attribute: .height,
 								  multiplier: 1,
-								  constant: frame.height / 6)
+								  constant: frame.height / 12)
 	}()
 	private let addButton:UIButton = {
 		let button = UIButton()
@@ -34,7 +34,6 @@ public class AddButtonView: UIView {
 		button.layer.cornerRadius = 10
 		button.addTarget(self, action: #selector(addButtonSelector),
 						 for: .touchUpInside)
-		button.titleLabel?.alpha = 0
 		return button
 	}()
 	// textfield
@@ -93,8 +92,7 @@ extension AddButtonView {
 		addButton.leadingAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.leadingAnchor).isActive = true
 		addButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
 		addButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-		buttonsStackLayout()
-		textFieldLayout()
+
 	}
 	private func textFieldLayout() {
 		addSubview(textFieldBackgroundView)

@@ -28,7 +28,7 @@ extension TasksViewController {
 	}
 	public override func viewDidLoad() {
 		super.viewDidLoad()
-		navigationItem.title = "Tasks"
+		navigationItem.title = tabBarItem.title
 		addButtonViewControllerSetUp()
 		//
 		customView.collectionView.delegate = self
@@ -36,29 +36,29 @@ extension TasksViewController {
 	}
 	public override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		self.navigationController?.navigationBar.isHidden = true
+		self.navigationController?.navigationBar.isTranslucent = false
 	}
 	
 	public override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-		self.navigationController?.navigationBar.isHidden = false
+		self.navigationController?.navigationBar.isTranslucent = false
 	}
 }
 
 // MARK: - CollectionView delegate
 extension TasksViewController:UICollectionViewDelegateFlowLayout {
 	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let height = collectionView.frame.height - 80
-		let width = collectionView.frame.width - 40
+		let height = collectionView.bounds.height - 40
+		let width = collectionView.bounds.width - 40
 		return CGSize(width: width, height: height)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		if self.tasksChildViewControllers.count == 0 {
 			// If tasks section is empty -> exclude left inset
-			return UIEdgeInsets(top: 40, left: 0, bottom: 60, right: 20)
+			return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 20)
 		}
-		return 	UIEdgeInsets(top: 40, left: 20, bottom: 60, right: 20)
+		return 	UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 	}
 }
 
