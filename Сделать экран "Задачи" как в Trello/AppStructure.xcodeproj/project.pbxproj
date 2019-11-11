@@ -9,8 +9,16 @@
 /* Begin PBXBuildFile section */
 		1CE273A923781EB600198E7F /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE273A823781EB600198E7F /* NotesTableViewCell.swift */; };
 		1CE273AB2378499000198E7F /* FullContentOfNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE273AA2378499000198E7F /* FullContentOfNoteViewController.swift */; };
+		A4EC3DC023794020003764C9 /* NestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */; };
+		A4EC3DC123794020003764C9 /* UsefulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB823794020003764C9 /* UsefulCell.swift */; };
+		A4EC3DC223794020003764C9 /* AddButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB923794020003764C9 /* AddButtonViewController.swift */; };
+		A4EC3DC323794020003764C9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DBA23794020003764C9 /* ListView.swift */; };
+		A4EC3DC423794020003764C9 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DBB23794020003764C9 /* AddButtonView.swift */; };
+		A4EC3DC523794020003764C9 /* HasCustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DBC23794020003764C9 /* HasCustomViewProtocol.swift */; };
+		A4EC3DC623794020003764C9 /* TasksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DBD23794020003764C9 /* TasksCollectionViewController.swift */; };
+		A4EC3DC723794020003764C9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DBE23794020003764C9 /* ListViewController.swift */; };
+		A4EC3DC823794020003764C9 /* TasksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DBF23794020003764C9 /* TasksCollectionView.swift */; };
 		C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294042375D0C80077AD8A /* MyTabBarController.swift */; };
-		C94294072375D22D0077AD8A /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294062375D22D0077AD8A /* TasksViewController.swift */; };
 		C94294092375D2350077AD8A /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294082375D2350077AD8A /* NotesViewController.swift */; };
 		C942940B2375D23F0077AD8A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942940A2375D23F0077AD8A /* SettingsViewController.swift */; };
 		C942940D2375DA830077AD8A /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942940C2375DA830077AD8A /* NewNoteViewController.swift */; };
@@ -28,8 +36,16 @@
 /* Begin PBXFileReference section */
 		1CE273A823781EB600198E7F /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		1CE273AA2378499000198E7F /* FullContentOfNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullContentOfNoteViewController.swift; sourceTree = "<group>"; };
+		A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedTableViewCell.swift; sourceTree = "<group>"; };
+		A4EC3DB823794020003764C9 /* UsefulCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulCell.swift; sourceTree = "<group>"; };
+		A4EC3DB923794020003764C9 /* AddButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonViewController.swift; sourceTree = "<group>"; };
+		A4EC3DBA23794020003764C9 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		A4EC3DBB23794020003764C9 /* AddButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		A4EC3DBC23794020003764C9 /* HasCustomViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasCustomViewProtocol.swift; sourceTree = "<group>"; };
+		A4EC3DBD23794020003764C9 /* TasksCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewController.swift; sourceTree = "<group>"; };
+		A4EC3DBE23794020003764C9 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A4EC3DBF23794020003764C9 /* TasksCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionView.swift; sourceTree = "<group>"; };
 		C94294042375D0C80077AD8A /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
-		C94294062375D22D0077AD8A /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C94294082375D2350077AD8A /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		C942940A2375D23F0077AD8A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C942940C2375DA830077AD8A /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +82,22 @@
 				C942940C2375DA830077AD8A /* NewNoteViewController.swift */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		A4EC3DB623793FE3003764C9 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				A4EC3DBB23794020003764C9 /* AddButtonView.swift */,
+				A4EC3DB923794020003764C9 /* AddButtonViewController.swift */,
+				A4EC3DBC23794020003764C9 /* HasCustomViewProtocol.swift */,
+				A4EC3DBA23794020003764C9 /* ListView.swift */,
+				A4EC3DBE23794020003764C9 /* ListViewController.swift */,
+				A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */,
+				A4EC3DBF23794020003764C9 /* TasksCollectionView.swift */,
+				A4EC3DBD23794020003764C9 /* TasksCollectionViewController.swift */,
+				A4EC3DB823794020003764C9 /* UsefulCell.swift */,
+			);
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 		C952FAE52375EC2F009DB26C /* Extensions */ = {
@@ -110,8 +142,8 @@
 		C96463822375CEB8000C33B5 /* Main Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A4EC3DB623793FE3003764C9 /* Tasks */,
 				C94294042375D0C80077AD8A /* MyTabBarController.swift */,
-				C94294062375D22D0077AD8A /* TasksViewController.swift */,
 				C942940A2375D23F0077AD8A /* SettingsViewController.swift */,
 				1CE273AC23784DC000198E7F /* Notes */,
 			);
@@ -200,19 +232,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				C952FAE72375ECAF009DB26C /* UserDefaults+helpers.swift in Sources */,
+				A4EC3DC823794020003764C9 /* TasksCollectionView.swift in Sources */,
 				C960C5232375A72D002703DC /* LoginViewController.swift in Sources */,
-				C94294072375D22D0077AD8A /* TasksViewController.swift in Sources */,
+				A4EC3DC023794020003764C9 /* NestedTableViewCell.swift in Sources */,
+				A4EC3DC323794020003764C9 /* ListView.swift in Sources */,
 				C964637F2375C8F8000C33B5 /* SignUpViewController.swift in Sources */,
 				C942940B2375D23F0077AD8A /* SettingsViewController.swift in Sources */,
 				C960C5212375A70F002703DC /* WelcomeViewController.swift in Sources */,
 				C964637D2375C8E6000C33B5 /* SignInViewController.swift in Sources */,
 				1CE273A923781EB600198E7F /* NotesTableViewCell.swift in Sources */,
+				A4EC3DC123794020003764C9 /* UsefulCell.swift in Sources */,
 				C94294092375D2350077AD8A /* NotesViewController.swift in Sources */,
+				A4EC3DC623794020003764C9 /* TasksCollectionViewController.swift in Sources */,
 				C960C51F2375A5D7002703DC /* RootViewController.swift in Sources */,
 				C942940D2375DA830077AD8A /* NewNoteViewController.swift in Sources */,
+				A4EC3DC223794020003764C9 /* AddButtonViewController.swift in Sources */,
 				C960C50D2375A54F002703DC /* AppDelegate.swift in Sources */,
 				1CE273AB2378499000198E7F /* FullContentOfNoteViewController.swift in Sources */,
+				A4EC3DC523794020003764C9 /* HasCustomViewProtocol.swift in Sources */,
+				A4EC3DC423794020003764C9 /* AddButtonView.swift in Sources */,
 				C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */,
+				A4EC3DC723794020003764C9 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

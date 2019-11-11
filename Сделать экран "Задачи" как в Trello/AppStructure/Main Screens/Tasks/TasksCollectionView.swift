@@ -1,5 +1,5 @@
 //
-//  TasksView.swift
+//  TasksCollectionView.swift
 //  TrelloCollectionView
 //
 //  Created by Graf Jenkins on 08/11/2019.
@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - Layout
-public class TasksView: UIView {
+public class TasksCollectionView: UIView {
 	// MARK: - Init
 	override public init(frame: CGRect) {
 		super.init(frame: frame)
@@ -27,6 +27,7 @@ public class TasksView: UIView {
 											  collectionViewLayout: layout)
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
 		collectionView.isPagingEnabled = true
+		collectionView.backgroundColor = .white
 		collectionView.register(UsefulCell.self, forCellWithReuseIdentifier: "Tasks")
 		collectionView.register(UsefulCell.self, forCellWithReuseIdentifier: UsefulCell.reuseIdentifier)
 		return collectionView
@@ -34,11 +35,11 @@ public class TasksView: UIView {
 }
 
 // MARK: - UI layout
-private extension TasksView {
+private extension TasksCollectionView {
 	private func collectionViewLayout() {
 		addSubview(collectionView)
 		let margins = layoutMarginsGuide
-		collectionView.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
+		collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
 		collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
 		collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
 		collectionView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true

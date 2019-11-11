@@ -16,7 +16,7 @@ public class ListView: UIView {
 	// MARK: - Init
 	override public init(frame: CGRect) {
 		super.init(frame: frame)
-		backgroundColor = .lightGray
+		backgroundColor = .blue
 		layer.cornerRadius = 10
 	}
 	required public init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
@@ -37,7 +37,7 @@ public class ListView: UIView {
 	// Top text field
 	private let topTextField:UITextField = {
 		let textField = UITextField()
-		textField.backgroundColor = .lightGray
+		textField.backgroundColor = .blue
 		//
 		textField.isEnabled = false
 		//
@@ -50,7 +50,7 @@ public class ListView: UIView {
 	private let topTextFieldBackgroundView: UIView = {
 		let view = UIView()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		view.backgroundColor = .lightGray
+		view.backgroundColor = .blue
 		view.layer.cornerRadius = 5
 		return view
 	}()
@@ -60,7 +60,7 @@ public class ListView: UIView {
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setTitle("Add card", for: .normal)
 		button.titleLabel?.textAlignment = .center
-		button.backgroundColor = .lightGray
+		button.backgroundColor = .blue
 		button.addTarget(self, action: #selector(addCardButtonSelector),
 						 for: .touchUpInside)
 		return button

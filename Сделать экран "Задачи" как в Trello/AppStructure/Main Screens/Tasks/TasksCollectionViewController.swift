@@ -8,19 +8,19 @@
 
 import UIKit
 // MARK: - Class
-public class TasksCollectionViewController:UIViewController {
+public class TasksViewController:UIViewController {
 	// MARK: - ViewControllers properties
 	var tasksChildViewControllers = [ListViewController]()
 	var addButtonViewController = AddButtonViewController()
 }
 
 // MARK: - HasCustomView
-extension TasksCollectionViewController:HasCustomView {
-	public typealias CustomView = TasksView
+extension TasksViewController:HasCustomView {
+	public typealias CustomView = TasksCollectionView
 }
 
 // MARK: - Lifecycle
-extension TasksCollectionViewController {
+extension TasksViewController {
 	public override func loadView() {
 		super.loadView()
 		view = CustomView()
@@ -46,9 +46,9 @@ extension TasksCollectionViewController {
 }
 
 // MARK: - CollectionView delegate
-extension TasksCollectionViewController:UICollectionViewDelegateFlowLayout {
+extension TasksViewController:UICollectionViewDelegateFlowLayout {
 	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let height = collectionView.frame.height - 60
+		let height = collectionView.frame.height - 80
 		let width = collectionView.frame.width - 40
 		return CGSize(width: width, height: height)
 	}
@@ -56,14 +56,14 @@ extension TasksCollectionViewController:UICollectionViewDelegateFlowLayout {
 	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		if self.tasksChildViewControllers.count == 0 {
 			// If tasks section is empty -> exclude left inset
-			return UIEdgeInsets(top: 20, left: 0, bottom: 40, right: 20)
+			return UIEdgeInsets(top: 40, left: 0, bottom: 60, right: 20)
 		}
-		return 	UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20)
+		return 	UIEdgeInsets(top: 40, left: 20, bottom: 60, right: 20)
 	}
 }
 
 // MARK: - CollectionView data source
-extension TasksCollectionViewController:UICollectionViewDataSource {
+extension TasksViewController:UICollectionViewDataSource {
 	public func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 2
 	}
@@ -89,19 +89,18 @@ extension TasksCollectionViewController:UICollectionViewDataSource {
 }
 
 // MARK: - Add button set up
-extension TasksCollectionViewController {
+extension TasksViewController {
 	private func addButtonViewControllerSetUp() {
-		addChildViewController(addButtonViewController)
-		addButtonViewController.didMove(toParentViewController: self)
+		addChild(addButtonViewController)
+		addButtonViewController.didMove(toParent: self)
 		addButtonViewController.customView.buttonHandler = {[unowned self] title in
 			let indexPath = IndexPath(row: self.tasksChildViewControllers.count, section: 0)
 			let newTasksListViewController = ListViewController(with: title)
-			self.addChildViewController(newTasksListViewController)
-			newTasksListViewController.didMove(toParentViewController: self)
+			self.addChild(newTasksListViewController)
+			newTasksListViewController.didMove(toParent: self)
 			self.tasksChildViewControllers.append(newTasksListViewController)
 			self.customView.collectionView.insertItems(at: [indexPath])
 			self.customView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
 		}
 	}
 }
-

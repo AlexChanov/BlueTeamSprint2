@@ -30,7 +30,7 @@ public class AddButtonView: UIView {
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setTitle("Add", for: .normal)
 		button.titleLabel?.textAlignment = .center
-		button.backgroundColor = .lightGray
+		button.backgroundColor = .blue
 		button.layer.cornerRadius = 10
 		button.addTarget(self, action: #selector(addButtonSelector),
 						 for: .touchUpInside)
@@ -95,7 +95,6 @@ extension AddButtonView {
 		addButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
 		buttonsStackLayout()
 		textFieldLayout()
-		textField.becomeFirstResponder()
 	}
 	private func textFieldLayout() {
 		addSubview(textFieldBackgroundView)
