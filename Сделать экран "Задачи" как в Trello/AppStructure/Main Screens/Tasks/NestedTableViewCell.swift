@@ -19,6 +19,7 @@ public class NestedTableViewCell:UITableViewCell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		backgroundColor = .none
 		layout()
+		selectionStyle = .none
 	}
 	
 	required public init?(coder aDecoder: NSCoder) {
@@ -53,20 +54,22 @@ extension NestedTableViewCell {
 	private func layout() {
 		contentView.addSubview(textFieldBackgroundView)
 		textFieldBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-														 constant: 5).isActive = true
-		textFieldBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+														 constant: 5).isActive								= true
+		textFieldBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor,
+													 constant: 5).isActive									= true
 		textFieldBackgroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-														  constant: -5).isActive = true
+														  constant: -5).isActive							= true
 		textFieldBackgroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-														constant: -5).isActive = true
+														constant: -5).isActive								= true
 		contentView.addSubview(textField)
 		textField.leadingAnchor.constraint(equalTo: textFieldBackgroundView.leadingAnchor,
-										   constant: 5).isActive = true
-		textField.topAnchor.constraint(equalTo: textFieldBackgroundView.topAnchor, constant: 5).isActive = true
+										   constant: 5).isActive											= true
+		textField.topAnchor.constraint(equalTo: textFieldBackgroundView.topAnchor,
+									   constant: 5).isActive												= true
 		textField.trailingAnchor.constraint(equalTo: textFieldBackgroundView.trailingAnchor,
-											constant: -5).isActive = true
+											constant: -5).isActive											= true
 		textField.bottomAnchor.constraint(equalTo: textFieldBackgroundView.bottomAnchor,
-										  constant: -5).isActive = true
+										  constant: -5).isActive											= true
 	}
 }
 

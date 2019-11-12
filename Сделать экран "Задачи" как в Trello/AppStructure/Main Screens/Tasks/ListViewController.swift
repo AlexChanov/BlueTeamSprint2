@@ -19,6 +19,7 @@ public class ListViewController: UIViewController {
 		didSet {
 			let indexPath = IndexPath(row: oldValue.count, section: 0)
 			customView.tableView.insertRows(at: [indexPath], with: .fade)
+			customView.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
 		}
 	}
 }

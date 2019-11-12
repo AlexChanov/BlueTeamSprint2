@@ -24,35 +24,38 @@ public class NotesViewController: UIViewController {
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = .white
-		tableView.register(NotesTableViewCell.self, forCellReuseIdentifier: NotesTableViewCell.reuseIdentifier)
+		tableView.register(NotesTableViewCell.self,
+						   forCellReuseIdentifier: NotesTableViewCell.reuseIdentifier)
 		return tableView
 	}()
 	// MARK: - lifecycle
 	override public func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        navigationItem.title = "Заметки"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeTapped))
-        setupLayout()
+		super.viewDidLoad()
+		view.backgroundColor = .white
+		navigationItem.title = "Заметки"
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
+															target: self,
+															action: #selector(composeTapped))
+		setupLayout()
 		tableView.dataSource = self
 		tableView.delegate = self
-    }
+	}
 	// MARK: - Selector
-    @objc
-    func composeTapped() {
-        let newNoteVC = EditNoteViewController()
-        newNoteVC.delegate = self
-        navigationController?.pushViewController(newNoteVC, animated: true)
-    }
+	@objc
+	func composeTapped() {
+		let newNoteVC = EditNoteViewController()
+		newNoteVC.delegate = self
+		navigationController?.pushViewController(newNoteVC, animated: true)
+	}
 	// MARK: - Layout
-    private func setupLayout() {
-        self.view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive               = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive        = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive                     = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive                   = true
-    }
+	private func setupLayout() {
+		self.view.addSubview(tableView)
+		tableView.translatesAutoresizingMaskIntoConstraints = false
+		tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive               = true
+		tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive        = true
+		tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive                     = true
+		tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive                   = true
+	}
 }
 
 //MARK: - TableViewDataSource
@@ -62,7 +65,8 @@ extension NotesViewController :  UITableViewDataSource {
 	}
 
 	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: NotesTableViewCell.reuseIdentifier, for: indexPath) as! NotesTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: NotesTableViewCell.reuseIdentifier,
+												 for: indexPath) as! NotesTableViewCell
 		let note = notesList[indexPath.row]
 		cell.notesLabel.text = "\(indexPath.row + 1). \(note)"
 		return cell
@@ -77,9 +81,10 @@ extension NotesViewController:UITableViewDelegate {
 		cell.layoutIfNeeded()
 		tableView.beginUpdates()
 		tableView.endUpdates()
-		cell.setSelected(false, animated: true)
+		tableView.deselectRow(at: indexPath, animated: false)
 	}
 }
+
 // MARK: - Text data protocol
 extension NotesViewController:TextDataUpdateProtocol {
 	public func addText(data text: String) {

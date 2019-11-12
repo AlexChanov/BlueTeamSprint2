@@ -97,12 +97,13 @@ extension AddButtonView {
 	private func textFieldLayout() {
 		addSubview(textFieldBackgroundView)
 		textFieldBackgroundView.leadingAnchor.constraint(equalTo: addButton.leadingAnchor,
-														 constant: 10).isActive = true
+														 constant: 10).isActive = 	true
 		textFieldBackgroundView.topAnchor.constraint(equalTo: addButton.topAnchor,
 													 constant: 10).isActive = true
 		textFieldBackgroundView.trailingAnchor.constraint(equalTo: addButton.trailingAnchor,
 														  constant: -10).isActive = true
 		textFieldBackgroundView.heightAnchor.constraint(equalToConstant: buttonHeightConstraint.constant / 3).isActive = true
+		textField.widthAnchor.constraint(equalToConstant: bounds.width - 20).isActive = true
 		addSubview(textField)
 		textField.leadingAnchor.constraint(equalTo: textFieldBackgroundView.leadingAnchor,
 										   constant: 5).isActive = true

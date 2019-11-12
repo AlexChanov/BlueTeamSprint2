@@ -9,11 +9,11 @@
 import UIKit
 
 class NotesTableViewCell: UITableViewCell {
-    
-    public static let reuseIdentifier = "notesCell"
+
+	public static let reuseIdentifier = "notesCell"
 	private let notesLabelHeightConstraint:NSLayoutConstraint?
 	private var cellEnlarged = false
-    
+	
 	// MARK: - UI
 	public let notesLabel:UILabel = {
 		let label = UILabel()
@@ -35,46 +35,43 @@ class NotesTableViewCell: UITableViewCell {
 		view.layer.cornerRadius = 5
 		return view
 	}()
-    // MARK: - Init
+	// MARK: - Init
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        notesLabelHeightConstraint = NSLayoutConstraint(item: notesLabel, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 100)
+	notesLabelHeightConstraint = NSLayoutConstraint(item: notesLabel, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 100)
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		backGroundViewLayout()
+		selectionStyle = .none
 		buttonLayout()
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+	}
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 }
 
 // MARK: - Layout
 extension NotesTableViewCell {
 	private func buttonLayout() {
 		contentView.addSubview(notesLabel)
-		notesLabel.topAnchor.constraint(equalTo: labelView.topAnchor, constant: 5).isActive            = true
-		notesLabel.bottomAnchor.constraint(equalTo: labelView.bottomAnchor, constant: -5).isActive      = true
-		notesLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 5).isActive    = true
-		notesLabel.trailingAnchor.constraint(equalTo: labelView.trailingAnchor, constant: -5).isActive = true
+		notesLabel.topAnchor.constraint(equalTo: labelView.topAnchor, constant: 5).isActive           		= true
+		notesLabel.bottomAnchor.constraint(equalTo: labelView.bottomAnchor, constant: -5).isActive     		= true
+		notesLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 5).isActive   		= true
+		notesLabel.trailingAnchor.constraint(equalTo: labelView.trailingAnchor, constant: -5).isActive		= true
+		//
 		notesLabel.addConstraint(notesLabelHeightConstraint!)
 	}
 	private func backGroundViewLayout() {
 		contentView.addSubview(labelView)
-		labelView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive            = true
-		labelView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive      = true
-		labelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive    = true
-		labelView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+		labelView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive				= true
+		labelView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive		= true
+		labelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive		= true
+		labelView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive	= true
 	}
 }
 
 // MARK: - Enlarge
 extension NotesTableViewCell {
 	public func changeConstraint() {
-		if cellEnlarged {
-			notesLabelHeightConstraint?.isActive = true
-		} else {
-			notesLabelHeightConstraint?.isActive = false
-			
-		}
+		notesLabelHeightConstraint?.isActive = cellEnlarged == true
 		cellEnlarged = cellEnlarged == false
 	}
 }
