@@ -8,8 +8,10 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+final class RootViewController: UIViewController {
+    
     private var current: UIViewController
+    
     
     init() {
         self.current = WelcomeViewController()
@@ -20,8 +22,10 @@ class RootViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
     
         addChild(current)
         current.view.frame = view.bounds
@@ -29,7 +33,8 @@ class RootViewController: UIViewController {
         current.didMove(toParent: self)
     }
     
-    func showLoginScreen() {
+    
+    public func showLoginScreen() {
         let new = UINavigationController(rootViewController: LoginViewController())
         
         addChild(new)
@@ -44,14 +49,12 @@ class RootViewController: UIViewController {
         current = new
     }
     
-    func switchToMainScreen() {
-        let myTabBarController = MyTabBarController()
-        animateFadeTransition(to: myTabBarController)
+    public func switchToMainScreen() {
+        animateFadeTransition(to: MyTabBarController())
     }
     
-    func switchToLogout() {
-        let loginViewController = LoginViewController()
-        let logoutScreen = UINavigationController(rootViewController: loginViewController)
+    public func switchToLogout() {
+        let logoutScreen = UINavigationController(rootViewController: LoginViewController())
         animateDismissTransition(to: logoutScreen)
     }
     
