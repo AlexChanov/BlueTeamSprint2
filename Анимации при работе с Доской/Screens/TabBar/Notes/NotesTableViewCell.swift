@@ -12,7 +12,8 @@ class NotesTableViewCell: UITableViewCell {
 
 	public static let reuseIdentifier = "notesCell"
 	private let notesLabelHeightConstraint:NSLayoutConstraint
-	
+    private let fadeLabelIn = CABasicAnimation(keyPath: "opacity")
+
 	// MARK: - UI
 	public let notesLabel:UILabel = {
 		let label = UILabel()
@@ -49,7 +50,6 @@ class NotesTableViewCell: UITableViewCell {
 	}
     
    private func disappearContent() {
-        let fadeLabelIn = CABasicAnimation(keyPath: "opacity")
         fadeLabelIn.fromValue = 1
         fadeLabelIn.toValue = 0
         fadeLabelIn.duration = 5
@@ -58,13 +58,12 @@ class NotesTableViewCell: UITableViewCell {
     }
     
      func appearContent() {
-        let fadeLabelIn = CABasicAnimation(keyPath: "opacity")
         fadeLabelIn.fromValue = 0
         fadeLabelIn.toValue = 1
-        fadeLabelIn.duration = 3
+        fadeLabelIn.duration = 5
         fadeLabelIn.repeatCount = 1
         notesLabel.layer.add(fadeLabelIn, forKey: "fadein")
-        notesLabel.layer.opacity = 1
+        var _: Timer = Timer.scheduledTimer(withTimeInterval: 4.8, repeats: false, block: { _ in self.disappearContent()})
     }
     
     
