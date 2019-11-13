@@ -12,6 +12,7 @@
 		78406AD8237AD813008794F0 /* UIKitForProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78406AD7237AD813008794F0 /* UIKitForProject.swift */; };
 		78406ADA237ADA78008794F0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78406AD9237ADA78008794F0 /* CustomButton.swift */; };
 		A438A175237986EE000651BE /* TextDataUpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */; };
+		A45CBD3D237BF31A005C9B72 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45CBD3C237BF31A005C9B72 /* GradientButton.swift */; };
 		A4EC3DC023794020003764C9 /* NestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */; };
 		A4EC3DC123794020003764C9 /* UsefulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB823794020003764C9 /* UsefulCell.swift */; };
 		A4EC3DC223794020003764C9 /* AddButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB923794020003764C9 /* AddButtonViewController.swift */; };
@@ -42,6 +43,7 @@
 		78406AD7237AD813008794F0 /* UIKitForProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitForProject.swift; sourceTree = "<group>"; };
 		78406AD9237ADA78008794F0 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDataUpdateProtocol.swift; sourceTree = "<group>"; };
+		A45CBD3C237BF31A005C9B72 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedTableViewCell.swift; sourceTree = "<group>"; };
 		A4EC3DB823794020003764C9 /* UsefulCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulCell.swift; sourceTree = "<group>"; };
 		A4EC3DB923794020003764C9 /* AddButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				C952FAE62375ECAF009DB26C /* HelperUserDefaults.swift */,
 				78406AD5237AD6AD008794F0 /* CustomTextView.swift */,
 				78406AD9237ADA78008794F0 /* CustomButton.swift */,
+				A45CBD3C237BF31A005C9B72 /* GradientButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				A4EC3DC423794020003764C9 /* AddButtonView.swift in Sources */,
 				78406AD8237AD813008794F0 /* UIKitForProject.swift in Sources */,
 				78406AD6237AD6AD008794F0 /* CustomTextView.swift in Sources */,
+				A45CBD3D237BF31A005C9B72 /* GradientButton.swift in Sources */,
 				C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */,
 				A4EC3DC723794020003764C9 /* ListViewController.swift in Sources */,
 			);
