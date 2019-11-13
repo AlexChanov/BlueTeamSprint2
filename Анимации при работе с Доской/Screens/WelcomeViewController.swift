@@ -75,9 +75,7 @@ class WelcomeViewController: UIViewController {
         self.startButton.gradientLayer.startPoint = CGPoint(x: 0.0, y: 1)
         self.startButton.gradientLayer.endPoint = CGPoint(x: 1, y: 0.0)
         let colors:[UIColor] = [#colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1),#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1),#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
-        self.startButton.gradientLayer.colors = colors.map({ (color) in
-            color.cgColor
-        })
+        self.startButton.gradientLayer.colors = colors.map({ $0.cgColor })
         let locations: [NSNumber] = [1,1,1]
         self.startButton.gradientLayer.locations = locations
         let gradientAnimation = CABasicAnimation(keyPath: "locations")

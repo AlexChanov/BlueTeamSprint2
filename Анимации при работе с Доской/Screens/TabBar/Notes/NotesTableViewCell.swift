@@ -23,6 +23,7 @@ class NotesTableViewCell: UITableViewCell {
 		label.numberOfLines = 0
 		label.adjustsFontSizeToFitWidth = false
 		label.backgroundColor = .blue
+        label.layer.opacity = 0
 		label.font = UIFont.systemFont(ofSize: 18)
 		return label
 	}()
@@ -35,13 +36,38 @@ class NotesTableViewCell: UITableViewCell {
 		return view
 	}()
 	// MARK: - Init
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+   
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 	notesLabelHeightConstraint = NSLayoutConstraint(item: notesLabel, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 100)
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		backGroundViewLayout()
 		selectionStyle = .none
 		buttonLayout()
+        disappearContent()
+        
 	}
+    
+   private func disappearContent() {
+        let fadeLabelIn = CABasicAnimation(keyPath: "opacity")
+        fadeLabelIn.fromValue = 1
+        fadeLabelIn.toValue = 0
+        fadeLabelIn.duration = 5
+        fadeLabelIn.repeatCount = 1
+        notesLabel.layer.add(fadeLabelIn, forKey: "fadein")
+    }
+    
+     func appearContent() {
+        let fadeLabelIn = CABasicAnimation(keyPath: "opacity")
+        fadeLabelIn.fromValue = 0
+        fadeLabelIn.toValue = 1
+        fadeLabelIn.duration = 3
+        fadeLabelIn.repeatCount = 1
+        notesLabel.layer.add(fadeLabelIn, forKey: "fadein")
+        notesLabel.layer.opacity = 1
+    }
+    
+    
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
@@ -63,6 +89,8 @@ extension NotesTableViewCell {
 		labelView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive		= true
 		labelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive		= true
 		labelView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive	= true
+        
+       
 	}
 }
 

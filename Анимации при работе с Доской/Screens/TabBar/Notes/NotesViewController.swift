@@ -71,6 +71,8 @@ extension NotesViewController :  UITableViewDataSource {
 		cell.notesLabel.text = "\(indexPath.row + 1). \(note)"
 		return cell
 	}
+    
+
 }
 
 // MARK: - TableViewDelegate
@@ -79,11 +81,14 @@ extension NotesViewController:UITableViewDelegate {
 		let cell = tableView.cellForRow(at: indexPath) as! NotesTableViewCell
 		cell.changeConstraint()
 		cell.layoutIfNeeded()
+        cell.appearContent()
 		tableView.beginUpdates()
 		tableView.endUpdates()
 		tableView.deselectRow(at: indexPath, animated: false)
 	}
+
 }
+
 
 // MARK: - Text data protocol
 extension NotesViewController:TextDataUpdateProtocol {
