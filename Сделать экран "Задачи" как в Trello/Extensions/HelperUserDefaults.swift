@@ -1,5 +1,5 @@
 //
-//  UserDefaults+helpers.swift
+//  HelperUserDefaults.swift
 //  Audible
 //
 //  Created by XCodeClub on 2019-10-21.
@@ -10,16 +10,18 @@ import Foundation
 
 extension UserDefaults {
     
-    enum UserDefaultsKeys: String {
+    private enum UserDefaultsKeys: String {
         case isLoggedIn
     }
     
-    func setIsLoggedIn(value: Bool) {
+    
+    public func setIsLoggedIn(value: Bool) {
         set(value, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
         synchronize()
     }
     
-    func isLoggedIn() -> Bool {
+    public func isLoggedIn() -> Bool {
         return bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue)
     }
+    
 }
