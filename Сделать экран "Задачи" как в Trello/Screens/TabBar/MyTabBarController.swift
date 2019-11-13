@@ -29,6 +29,6 @@ final class MyTabBarController: UITabBarController {
         
         let tabBarList = [tasksVC, notesVC, settingsVC]
         viewControllers = tabBarList.map { UINavigationController(rootViewController: $0) }
+		selectedIndex = 1
     }
-    
 }

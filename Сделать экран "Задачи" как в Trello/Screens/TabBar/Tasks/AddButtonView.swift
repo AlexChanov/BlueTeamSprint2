@@ -103,12 +103,13 @@ extension AddButtonView {
 		textFieldBackgroundView.trailingAnchor.constraint(equalTo: addButton.trailingAnchor,
 														  constant: -10).isActive = true
 		textFieldBackgroundView.heightAnchor.constraint(equalToConstant: buttonHeightConstraint.constant / 3).isActive = true
-		textField.widthAnchor.constraint(equalToConstant: bounds.width - 20).isActive = true
+		textFieldBackgroundView.widthAnchor.constraint(equalToConstant: bounds.width - 20).isActive = true
 		addSubview(textField)
+		textField.topAnchor.constraint(equalTo: textFieldBackgroundView.topAnchor,
+										   constant: 1).isActive = true
 		textField.leadingAnchor.constraint(equalTo: textFieldBackgroundView.leadingAnchor,
 										   constant: 5).isActive = true
-		textField.topAnchor.constraint(equalTo: textFieldBackgroundView.topAnchor,
-									   constant: 1).isActive = true
+	
 		textField.trailingAnchor.constraint(equalTo: textFieldBackgroundView.trailingAnchor,
 											constant: -5).isActive = true
 		textField.bottomAnchor.constraint(equalTo: textFieldBackgroundView.bottomAnchor,

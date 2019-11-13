@@ -12,7 +12,6 @@ class NotesTableViewCell: UITableViewCell {
 
 	public static let reuseIdentifier = "notesCell"
 	private let notesLabelHeightConstraint:NSLayoutConstraint?
-	private var cellEnlarged = false
 	
 	// MARK: - UI
 	public let notesLabel:UILabel = {
@@ -53,7 +52,6 @@ extension NotesTableViewCell {
 	private func buttonLayout() {
 		contentView.addSubview(notesLabel)
 		notesLabel.topAnchor.constraint(equalTo: labelView.topAnchor, constant: 5).isActive           		= true
-		notesLabel.bottomAnchor.constraint(equalTo: labelView.bottomAnchor, constant: -5).isActive     		= true
 		notesLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 5).isActive   		= true
 		notesLabel.trailingAnchor.constraint(equalTo: labelView.trailingAnchor, constant: -5).isActive		= true
 		//
@@ -71,7 +69,6 @@ extension NotesTableViewCell {
 // MARK: - Enlarge
 extension NotesTableViewCell {
 	public func changeConstraint() {
-		notesLabelHeightConstraint?.isActive = cellEnlarged == true
-		cellEnlarged = cellEnlarged == false
+		notesLabelHeightConstraint?.isActive = !notesLabelHeightConstraint!.isActive
 	}
 }
