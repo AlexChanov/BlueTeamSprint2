@@ -54,7 +54,7 @@ extension NotesTableViewCell {
 		notesLabel.topAnchor.constraint(equalTo: labelView.topAnchor, constant: 5).isActive           		= true
 		notesLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 5).isActive   		= true
 		notesLabel.trailingAnchor.constraint(equalTo: labelView.trailingAnchor, constant: -5).isActive		= true
-		//
+		notesLabel.bottomAnchor.constraint(lessThanOrEqualTo: labelView.bottomAnchor, constant: -5).isActive = true
 		notesLabel.addConstraint(notesLabelHeightConstraint!)
 	}
 	private func backGroundViewLayout() {

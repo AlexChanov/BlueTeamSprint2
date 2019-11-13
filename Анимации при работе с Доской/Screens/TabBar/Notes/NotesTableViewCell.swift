@@ -11,7 +11,7 @@ import UIKit
 class NotesTableViewCell: UITableViewCell {
 
 	public static let reuseIdentifier = "notesCell"
-	private let notesLabelHeightConstraint:NSLayoutConstraint?
+	private let notesLabelHeightConstraint:NSLayoutConstraint
 	
 	// MARK: - UI
 	public let notesLabel:UILabel = {
@@ -80,8 +80,8 @@ extension NotesTableViewCell {
 		notesLabel.topAnchor.constraint(equalTo: labelView.topAnchor, constant: 5).isActive           		= true
 		notesLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 5).isActive   		= true
 		notesLabel.trailingAnchor.constraint(equalTo: labelView.trailingAnchor, constant: -5).isActive		= true
-		//
-		notesLabel.addConstraint(notesLabelHeightConstraint!)
+		notesLabel.bottomAnchor.constraint(lessThanOrEqualTo: labelView.bottomAnchor, constant: -5).isActive = true
+		notesLabel.addConstraint(notesLabelHeightConstraint)
 	}
 	private func backGroundViewLayout() {
 		contentView.addSubview(labelView)
@@ -89,14 +89,12 @@ extension NotesTableViewCell {
 		labelView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive		= true
 		labelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive		= true
 		labelView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive	= true
-        
-       
 	}
 }
 
 // MARK: - Enlarge
 extension NotesTableViewCell {
 	public func changeConstraint() {
-		notesLabelHeightConstraint?.isActive = !notesLabelHeightConstraint!.isActive
+		notesLabelHeightConstraint.isActive = !notesLabelHeightConstraint.isActive
 	}
 }
