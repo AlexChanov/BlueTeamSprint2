@@ -9,7 +9,6 @@
 import UIKit
 
 extension UITextView {
-    
     public static func system(with text: String) -> UITextView {
         let textView = UITextView()
         textView.frame.size = CGSize(width: 300, height: 300)
@@ -21,5 +20,4 @@ extension UITextView {
         textView.textAlignment = .center
         return textView
     }
-    
 }

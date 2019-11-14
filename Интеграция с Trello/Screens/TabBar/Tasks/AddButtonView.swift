@@ -26,12 +26,7 @@ public class AddButtonView: UIView {
 								  constant: frame.height / 12)
 	}()
 	private let addButton:UIButton = {
-		let button = UIButton()
-		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setTitle("Add", for: .normal)
-		button.titleLabel?.textAlignment = .center
-		button.backgroundColor = .blue
-		button.layer.cornerRadius = 10
+		let button = UIButton.system(with: "Add")
 		button.addTarget(self, action: #selector(addButtonSelector),
 						 for: .touchUpInside)
 		return button

@@ -13,7 +13,6 @@ public final class AuthorizationVC: UIViewController, WKNavigationDelegate {
     
     private var webView: WKWebView!
 
-    
     override public func loadView() {
         super.loadView()
         webView = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
@@ -31,8 +30,7 @@ public final class AuthorizationVC: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
         webView.load(TrelloManager.shared.authorizationRequest())
     }
-    
-    
+
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.evaluateJavaScript("document.documentElement.outerHTML.toString()") { (html, error) in
             guard let html = html as? String else { return }
@@ -49,11 +47,9 @@ public final class AuthorizationVC: UIViewController, WKNavigationDelegate {
             self.closeButtonHit()
         }
     }
-    
-    
+
     // MARK: - Buttons
     @objc private func closeButtonHit() {
         dismiss(animated: true, completion: nil)
     }
-    
 }

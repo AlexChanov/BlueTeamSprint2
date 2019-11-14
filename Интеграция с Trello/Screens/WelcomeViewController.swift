@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: SignInViewController {
     
     var gameTimer : Timer?
     
@@ -22,27 +22,13 @@ class WelcomeViewController: UIViewController {
         return textLabel
     }()
 
-    private let beginButton: GradientButton = {
-        let button = GradientButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Начать", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.textAlignment = .center
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
-        button.backgroundColor = .blue
-        return button
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        buttonLayout()
+        title = nil
         labelLayout()
-        beginButton.animateGradient()
-		gameTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: {[unowned self] _ in
-			self.beginButton.animateGradient()
+        mainButton.animateGradient()
+		gameTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: {[unowned self] _ in
+			self.mainButton.animateGradient()
 		})
     }
 	
@@ -51,8 +37,7 @@ class WelcomeViewController: UIViewController {
 		self.gameTimer?.invalidate()
 	}
   
-    @objc
-    func startButtonTapped() {
+    override func myButtonTapped() {
         if UserDefaults.standard.isLoggedIn() {
             // navigate to main screen
             AppDelegate.shared.rootViewController.switchToMainScreen()
@@ -71,14 +56,6 @@ extension WelcomeViewController {
         textLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
         textLabel.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
         textLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
-        textLabel.bottomAnchor.constraint(equalTo: beginButton.topAnchor, constant: 10).isActive = true
-    }
-
-    private func buttonLayout() {
-        view.addSubview(beginButton)
-        beginButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.7).isActive = true
-        beginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        beginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        beginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        textLabel.bottomAnchor.constraint(equalTo: mainButton.topAnchor, constant: 10).isActive = true
     }
 }
