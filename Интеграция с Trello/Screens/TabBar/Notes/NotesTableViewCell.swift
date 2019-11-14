@@ -68,7 +68,12 @@ extension NotesTableViewCell {
 
 // MARK: - Enlarge
 extension NotesTableViewCell {
-	public func changeConstraint() {
-		notesLabelHeightConstraint?.isActive = !notesLabelHeightConstraint!.isActive
+	override func setSelected(_ selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated:animated)
+		if selected {
+			notesLabelHeightConstraint?.isActive = !notesLabelHeightConstraint!.isActive
+			setNeedsLayout()
+			layoutIfNeeded()
+		}
 	}
 }

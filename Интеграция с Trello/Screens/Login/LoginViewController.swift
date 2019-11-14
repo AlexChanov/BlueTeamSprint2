@@ -71,7 +71,7 @@ extension LoginViewController {
     private func stackLayout() {
         view.addSubview(buttonsStack)
         buttonsStack.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.7).isActive = true
-        buttonsStack.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2).isActive = true
+        buttonsStack.heightAnchor.constraint(equalToConstant: 110).isActive = true
         buttonsStack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         buttonsStack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }

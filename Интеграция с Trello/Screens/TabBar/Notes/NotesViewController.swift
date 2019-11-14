@@ -68,7 +68,7 @@ extension NotesViewController :  UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: NotesTableViewCell.reuseIdentifier,
 												 for: indexPath) as! NotesTableViewCell
 		let note = notesList[indexPath.row]
-		cell.notesLabel.text = "\(indexPath.row + 1). \(note)"
+		cell.notesLabel.text = "\(note)"
 		return cell
 	}
 }
@@ -76,11 +76,7 @@ extension NotesViewController :  UITableViewDataSource {
 // MARK: - TableViewDelegate
 extension NotesViewController:UITableViewDelegate {
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let cell = tableView.cellForRow(at: indexPath) as! NotesTableViewCell
-		cell.changeConstraint()
-		cell.layoutIfNeeded()
-		tableView.beginUpdates()
-		tableView.endUpdates()
+		tableView.performBatchUpdates(nil)
 		tableView.deselectRow(at: indexPath, animated: false)
 	}
 }

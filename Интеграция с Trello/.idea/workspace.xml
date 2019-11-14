@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e7c6ef70-6247-4d87-8f8e-ffc5a97bf09e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extensions/CustomButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Extensions/CustomButton.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extensions/GradientButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Extensions/GradientButton.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screens/Login/LoginViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/Login/LoginViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screens/Login/SignInViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/Login/SignInViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screens/TabBar/SettingsViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/TabBar/SettingsViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/TabBar/Notes/NotesTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/TabBar/Notes/NotesTableViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/TabBar/Notes/NotesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/TabBar/Notes/NotesViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/TabBar/Tasks/AddButtonView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/TabBar/Tasks/AddButtonView.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screens/WelcomeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/WelcomeViewController.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +59,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573746986177</updated>
-      <workItem from="1573746992352" duration="6388000" />
+      <workItem from="1573746992352" duration="7864000" />
+      <workItem from="1573759964515" duration="1069000" />
     </task>
     <servers />
   </component>
@@ -72,7 +72,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

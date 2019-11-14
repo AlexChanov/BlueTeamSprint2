@@ -10,7 +10,7 @@ import UIKit
 
 class WelcomeViewController: SignInViewController {
     
-    var gameTimer : Timer?
+    private var gameTimer : Timer?
     
     private let textLabel: UILabel = {
         let textLabel = UILabel()
