@@ -30,5 +30,4 @@ extension UIButton {
         button.tintColor = .black
         return button
     }
-    
 }
