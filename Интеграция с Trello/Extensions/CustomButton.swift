@@ -24,8 +24,10 @@ extension UIButton {
     }
     
     public static func close() -> UIButton {
-        let button = UIButton(type: .system)
-        button.frame.size = CGSize(width: 40, height: 40)
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         button.setImage(UIImage(named: "Close"), for: .normal)
         button.tintColor = .black
         return button

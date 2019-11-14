@@ -24,8 +24,9 @@ public final class AuthorizationVC: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         let closeButton = UIButton.close()
         closeButton.addTarget(self, action: #selector(closeButtonHit), for: .touchUpInside)
-        closeButton.frame.origin = CGPoint(x: 15, y: 45)
         view.addSubview(closeButton)
+        closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 45).isActive = true
+        closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
         //
         webView.navigationDelegate = self
         webView.load(TrelloManager.shared.authorizationRequest())
