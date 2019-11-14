@@ -25,8 +25,9 @@ final class SignInViewController: UIViewController {
 
     @objc
     private func myButtonTapped() {
-        UserDefaults.standard.setIsLoggedIn(value: true)
-        AppDelegate.shared.rootViewController.switchToMainScreen()
+        modalTransitionStyle = .coverVertical
+        modalPresentationStyle = .fullScreen
+        present(AuthorizationVC(), animated: true, completion: nil)
     }
 
 }

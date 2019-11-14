@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
     
     @objc
     private func signOutButtonTapped() {
-       UserDefaults.standard.setIsLoggedIn(value: false)
+       UserDefaults.standard.deleteTrelloToken()
         // navigate to login screen
         AppDelegate.shared.rootViewController.switchToLogout()
     }

@@ -11,17 +11,25 @@ import Foundation
 extension UserDefaults {
     
     private enum UserDefaultsKeys: String {
-        case isLoggedIn
+        case trelloToken
     }
     
     
-    public func setIsLoggedIn(value: Bool) {
-        set(value, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
+    public func setTrelloToken(_ token: String) {
+        set(token, forKey: UserDefaultsKeys.trelloToken.rawValue)
         synchronize()
     }
     
+    public func getTrelloToken() -> String {
+        return string(forKey: UserDefaultsKeys.trelloToken.rawValue) ?? ""
+    }
+    
     public func isLoggedIn() -> Bool {
-        return bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue)
+        return getTrelloToken() != ""
+    }
+    
+    public func deleteTrelloToken() {
+        setTrelloToken("")
     }
     
 }

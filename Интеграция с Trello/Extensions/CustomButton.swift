@@ -23,4 +23,12 @@ extension UIButton {
         return button
     }
     
+    public static func close() -> UIButton {
+        let button = UIButton(type: .system)
+        button.frame.size = CGSize(width: 40, height: 40)
+        button.setImage(UIImage(named: "Close"), for: .normal)
+        button.tintColor = .black
+        return button
+    }
+    
 }
