@@ -37,8 +37,7 @@ extension TasksViewController {
 	public override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.navigationController?.navigationBar.isTranslucent = false
-        // load board
-        let board = TrelloManager.shared.getTaskBoard()
+        TrelloManager.shared.updateTaskBoard()
 	}
 	
 	public override func viewWillDisappear(_ animated: Bool) {

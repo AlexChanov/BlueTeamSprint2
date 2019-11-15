@@ -28,6 +28,7 @@ public final class TrelloManager {
                 let board = boards.map { TrelloTaskBoard(dto: $0) }.filter { !$0.isClosed }.first
                 guard let b = board else { return }
                 self.board = b
+                self.getLists()
             } catch { print(error) }
         }
         boardTask.resume()
@@ -45,8 +46,8 @@ public final class TrelloManager {
         listsTask.resume()
     }
     
-    public func getTaskBoard() -> TrelloTaskBoard {
-        return board
+    public func updateTaskBoard() {
+        getBoard()
     }
     
 }
