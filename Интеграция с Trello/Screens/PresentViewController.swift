@@ -34,21 +34,21 @@ class PresentViewController: UIViewController {
         
         
         redCard.frame = CGRect(x: frameX+90, y: frameY+30, width: 200, height: 200)
-        redCard.label.text = "Оранжева комнада"
+        redCard.label.text = "Оранжевая команда"
         redCard.backgroundColor = .orange
         
         greenCard.frame = CGRect(x: frameX+60, y: frameY+20, width: 200, height: 200)
-        greenCard.label.text = "Cерая комнада"
+        greenCard.label.text = "Cерая команда"
         greenCard.backgroundColor = .gray
         
         
         blueCard.frame = CGRect(x: frameX+30, y: frameY+10, width: 200, height: 200)
-        blueCard.label.text = "Синяя комнада"
+        blueCard.label.text = "Синяя команда"
         blueCard.backgroundColor = .darkBlue
         
         
         blackCard.frame = CGRect(x: frameX, y: frameY, width: 200, height: 200)
-        blackCard.label.text = "Черная комнада"
+        blackCard.label.text = "Черная команда"
         blackCard.backgroundColor = .black
         
         

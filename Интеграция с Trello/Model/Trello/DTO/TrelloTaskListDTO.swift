@@ -10,6 +10,7 @@ public struct TrelloTaskListDTO: Codable {
     
     public var id: String?
     public var name: String?
+    public var closed: Bool?
     public var idBoard: String?
     
 }

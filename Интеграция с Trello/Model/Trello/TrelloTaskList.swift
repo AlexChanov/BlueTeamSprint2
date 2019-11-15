@@ -10,6 +10,7 @@ public struct TrelloTaskList {
     
     public var id: String
     public var name: String
+    public var isClosed: Bool
     public var idBoard: String
     
     public var tasks: [TrelloTask] = []
@@ -18,6 +19,7 @@ public struct TrelloTaskList {
         var dto = TrelloTaskListDTO()
         dto.id = id
         dto.name = name
+        dto.closed = isClosed
         dto.idBoard = idBoard
         return dto
     }
@@ -26,6 +28,7 @@ public struct TrelloTaskList {
     init(dto: TrelloTaskListDTO) {
         id = dto.id ?? ""
         name = dto.name ?? "Неизвестно"
+        isClosed = dto.closed ?? true
         idBoard = dto.idBoard ?? ""
     }
     

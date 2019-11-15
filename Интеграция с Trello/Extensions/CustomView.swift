@@ -17,7 +17,7 @@ class CustomView: UIView {
         
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        label.font = UIFont.boldSystemFont(ofSize: 18.0)
         self.addSubview(label)
         
         label.translatesAutoresizingMaskIntoConstraints = false
