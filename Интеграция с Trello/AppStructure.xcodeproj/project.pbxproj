@@ -19,6 +19,7 @@
 		7843445A237D8F9F000BC559 /* TrelloTaskBoardDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78434459237D8F9F000BC559 /* TrelloTaskBoardDTO.swift */; };
 		7843445C237D8FDD000BC559 /* TrelloTaskListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7843445B237D8FDD000BC559 /* TrelloTaskListDTO.swift */; };
 		7843445E237D9003000BC559 /* TrelloTaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7843445D237D9003000BC559 /* TrelloTaskDTO.swift */; };
+		785906BD237F28FF002A0650 /* TrelloManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785906BC237F28FF002A0650 /* TrelloManagerDelegate.swift */; };
 		786F3163237EF77C00EEC665 /* TrelloRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F3162237EF77C00EEC665 /* TrelloRequestManager.swift */; };
 		7870234B237CB00100B93766 /* TrelloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7870234A237CB00100B93766 /* TrelloManager.swift */; };
 		7870234D237CB34E00B93766 /* AuthorizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7870234C237CB34E00B93766 /* AuthorizationVC.swift */; };
@@ -61,6 +62,7 @@
 		78434459237D8F9F000BC559 /* TrelloTaskBoardDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTaskBoardDTO.swift; sourceTree = "<group>"; };
 		7843445B237D8FDD000BC559 /* TrelloTaskListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTaskListDTO.swift; sourceTree = "<group>"; };
 		7843445D237D9003000BC559 /* TrelloTaskDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTaskDTO.swift; sourceTree = "<group>"; };
+		785906BC237F28FF002A0650 /* TrelloManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloManagerDelegate.swift; sourceTree = "<group>"; };
 		786F3162237EF77C00EEC665 /* TrelloRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloRequestManager.swift; sourceTree = "<group>"; };
 		7870234A237CB00100B93766 /* TrelloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloManager.swift; sourceTree = "<group>"; };
 		7870234C237CB34E00B93766 /* AuthorizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVC.swift; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
+		785906BE237F2908002A0650 /* Trello */ = {
+			isa = PBXGroup;
+			children = (
+				785906BC237F28FF002A0650 /* TrelloManagerDelegate.swift */,
+			);
+			path = Trello;
+			sourceTree = "<group>";
+		};
 		786F3161237EF75A00EEC665 /* Trello */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +200,7 @@
 		C952FAE52375EC2F009DB26C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				785906BE237F2908002A0650 /* Trello */,
 				78406AD7237AD813008794F0 /* UIKitForProject.swift */,
 				C952FAE62375ECAF009DB26C /* HelperUserDefaults.swift */,
 				78406AD5237AD6AD008794F0 /* CustomTextView.swift */,
@@ -358,6 +369,7 @@
 				78406AD8237AD813008794F0 /* UIKitForProject.swift in Sources */,
 				78406AD6237AD6AD008794F0 /* CustomTextView.swift in Sources */,
 				78434453237D8CEA000BC559 /* TrelloTaskBoard.swift in Sources */,
+				785906BD237F28FF002A0650 /* TrelloManagerDelegate.swift in Sources */,
 				A45CBD3D237BF31A005C9B72 /* GradientButton.swift in Sources */,
 				C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */,
 				A4EC3DC723794020003764C9 /* ListViewController.swift in Sources */,
