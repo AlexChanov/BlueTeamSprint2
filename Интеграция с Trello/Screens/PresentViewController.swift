@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PresentViewControlle: UIViewController {
+class PresentViewController: UIViewController {
     
     let blackCard = CustomView()
     let greenCard = CustomView()
@@ -16,12 +16,23 @@ class PresentViewControlle: UIViewController {
     let redCard = CustomView()
     let tappImage = UIImageView()
     
+    private let trelloLabel: UILabel = {
+        let textLabel = UILabel()
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.textAlignment = .center
+//        textLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        textLabel.font = UIFont.boldSystemFont(ofSize: 40)
+
+        textLabel.text = "Trello"
+        return textLabel
+    }()
     
     let frameY = 300
     let frameX = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         redCard.frame = CGRect(x: frameX+90, y: frameY+30, width: 200, height: 200)
         redCard.label.text = "Красная комнада"
@@ -34,7 +45,7 @@ class PresentViewControlle: UIViewController {
         
         blueCard.frame = CGRect(x: frameX+30, y: frameY+10, width: 200, height: 200)
         blueCard.label.text = "Синяя комнада"
-        blueCard.backgroundColor = .blue
+        blueCard.backgroundColor = .darkBlue
        
         
         blackCard.frame = CGRect(x: frameX, y: frameY, width: 200, height: 200)
@@ -42,7 +53,7 @@ class PresentViewControlle: UIViewController {
         blackCard.backgroundColor = .black
         
         
-        tappImage.image = UIImage(named: "tapp")
+        tappImage.image = UIImage(named: "tappingImage")
         tappImage.center.y = self.view.center.y + 100
         tappImage.center.x = self.view.center.x
         tappImage.frame.size = CGSize(width: 100, height: 150)
@@ -52,16 +63,18 @@ class PresentViewControlle: UIViewController {
         self.view.addSubview(greenCard)
         self.view.addSubview(redCard)
         self.view.addSubview(tappImage)
-
+        self.view.addSubview(trelloLabel)
+        labelLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         animateViews()
+
     }
     
     
-    func animateViews() {
+   private func animateViews() {
         
         UIView.animate(withDuration: 1, delay: 0.5, options: [], animations: {
             self.tappImage.center.x = self.redCard.center.x
@@ -109,7 +122,9 @@ class PresentViewControlle: UIViewController {
                     
                 }, completion: { (result) in
                     self.tappImage.isHidden = true
+                    self.trelloLabel.isHidden = true
                     self.animationImage()
+
                 })
             }
             
@@ -118,16 +133,25 @@ class PresentViewControlle: UIViewController {
     
     
     private func animationImage() {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.blueCard.transform = CGAffineTransform(scaleX: 50 ,y: 50)
-            self.blueCard.transform = CGAffineTransform(rotationAngle: 361)
             self.blueCard.layer.opacity = 0
+            self.blackCard.layer.opacity = 0
+
         }) { (Bool) in
-            
+            AppDelegate.shared.rootViewController.switchToWelcomScreen()
         }
-        
     }
-    
+}
 
 
+// MARK: - Layout
+extension PresentViewController {
+    private func labelLayout() {
+        view.addSubview(trelloLabel)
+        let margins = view.layoutMarginsGuide
+        trelloLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        trelloLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 100).isActive = true
+        trelloLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+    }
 }

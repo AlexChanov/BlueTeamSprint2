@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CC23802237E8D1E009C710E /* PresentViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC23801237E8D1E009C710E /* PresentViewControlle.swift */; };
+		1CC23802237E8D1E009C710E /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC23801237E8D1E009C710E /* PresentViewController.swift */; };
 		1CC23804237E8D55009C710E /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC23803237E8D55009C710E /* CustomView.swift */; };
 		1CE273A923781EB600198E7F /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE273A823781EB600198E7F /* NotesTableViewCell.swift */; };
 		78406AD6237AD6AD008794F0 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78406AD5237AD6AD008794F0 /* CustomTextView.swift */; };
@@ -42,7 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CC23801237E8D1E009C710E /* PresentViewControlle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewControlle.swift; sourceTree = "<group>"; };
+		1CC23801237E8D1E009C710E /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
 		1CC23803237E8D55009C710E /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		1CE273A823781EB600198E7F /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		78406AD5237AD6AD008794F0 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C960C5202375A70F002703DC /* WelcomeViewController.swift */,
-				1CC23801237E8D1E009C710E /* PresentViewControlle.swift */,
+				1CC23801237E8D1E009C710E /* PresentViewController.swift */,
 				C96AD84F237728BA00D9C6D0 /* Login */,
 				C96463822375CEB8000C33B5 /* TabBar */,
 			);
@@ -277,7 +277,7 @@
 				A4EC3DC023794020003764C9 /* NestedTableViewCell.swift in Sources */,
 				78406ADA237ADA78008794F0 /* CustomButton.swift in Sources */,
 				7870234B237CB00100B93766 /* TrelloManager.swift in Sources */,
-				1CC23802237E8D1E009C710E /* PresentViewControlle.swift in Sources */,
+				1CC23802237E8D1E009C710E /* PresentViewController.swift in Sources */,
 				A4EC3DC323794020003764C9 /* ListView.swift in Sources */,
 				C964637F2375C8F8000C33B5 /* SignUpViewController.swift in Sources */,
 				C942940B2375D23F0077AD8A /* SettingsViewController.swift in Sources */,
