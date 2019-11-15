@@ -12,6 +12,8 @@ public struct TrelloTaskList {
     public var name: String
     public var idBoard: String
     
+    public var tasks: [TrelloTask] = []
+    
     public var dto: TrelloTaskListDTO {
         var dto = TrelloTaskListDTO()
         dto.id = id

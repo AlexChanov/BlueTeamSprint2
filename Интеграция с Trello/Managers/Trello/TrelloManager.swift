@@ -26,24 +26,34 @@ public final class TrelloManager {
     
     // MARK: - Tasks
     
-    private var boardTask: URLSessionDataTask!
+    private var getTaskBoard: URLSessionDataTask!
+    private var getListsBoard: URLSessionDataTask!
     
     
     // MARK: - Public functions
     
     public func initTask() {
-        self.boardTask = session.dataTask(with: TrelloRequestManager.shared.getBoard()) { (data, response, error) in
+        self.getTaskBoard = session.dataTask(with: TrelloRequestManager.shared.getBoard()) { (data, response, error) in
             do {
                 let boards = try JSONDecoder().decode([TrelloTaskBoardDTO].self, from: data!)
                 let board = boards.map { TrelloTaskBoard(dto: $0) }.filter { !$0.isClosed }.first
                 guard let b = board else { return }
                 self.board = b
+                self.getListsBoard.resume()
+            } catch { print(error) }
+        }
+        
+        self.getListsBoard = session.dataTask(with: TrelloRequestManager.shared.getLists(for: self.board.id)) { (data, response, error) in
+            do {
+                let lists = try JSONDecoder().decode([TrelloTaskListDTO].self, from: data!)
+                let _lists = lists.map { TrelloTaskList(dto: $0) }
+                self.board.lists = _lists
             } catch { print(error) }
         }
     }
     
-    public func getTaskBoard() {
-        boardTask.resume()
+    public func getBoard() {
+        getTaskBoard.resume()
     }
     
 }
