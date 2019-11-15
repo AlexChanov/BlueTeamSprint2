@@ -7,5 +7,5 @@
 //
 
 protocol TrelloManagerDelegate: class {
-    func update(_ board: TrelloTaskBoard)
+    func updateBoard(with board: TrelloTaskBoard)
 }

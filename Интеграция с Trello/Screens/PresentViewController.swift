@@ -143,7 +143,7 @@ extension PresentViewController {
         blackCard.backgroundColor = .black
         
         
-        tappImage.image = UIImage(named: "tappingImage")
+        tappImage.image = UIImage(named: "TapFinger")
         tappImage.center.y = self.view.center.y + 200
         tappImage.center.x = self.view.center.x
         tappImage.frame.size = CGSize(width: blackCard.frame.width/2, height: blackCard.frame.width/1.5)

@@ -41,6 +41,11 @@ public final class TrelloRequestManager {
         return URLRequest(url: url)
     }
     
+    public func addTask(for listID: String, name: String) -> URLRequest {
+        let url = URL(string: "https://api.trello.com/1/cards?idList=\(listID)&keepFromSource=all&name=\(name)&key=\(apiKey)&token=\(token)")!
+        return URLRequest(url: url)
+    }
+    
 }
 
 

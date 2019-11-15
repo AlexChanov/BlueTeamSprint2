@@ -54,8 +54,8 @@ public final class TrelloManager {
             do {
                 let tasks = try JSONDecoder().decode([TrelloTaskDTO].self, from: data!)
                 let _tasks = tasks.map { TrelloTask(dto: $0) }.filter { !$0.isClosed }
+                var index = 0
                 for list in self.board.lists {
-                    var index = 0
                     for task in _tasks {
                         if list.id == task.idList {
                             self.board.lists[index].tasks.append(task)
@@ -63,7 +63,7 @@ public final class TrelloManager {
                     }
                     index += 1
                 }
-                self.delegate?.update(self.board)
+                self.delegate?.updateBoard(with: self.board)
             } catch { print(error) }
         }
         tasksTask.resume()
@@ -71,6 +71,14 @@ public final class TrelloManager {
     
     public func updateTaskBoard() {
         getBoard()
+    }
+    
+    public func addTask(for listID: String, name: String) {
+        let session = URLSession.shared
+        var request = TrelloRequestManager.shared.addTask(for: listID, name: name)
+        request.httpMethod = "POST"
+        let addTask = session.dataTask(with: request)
+        addTask.resume()
     }
     
 }

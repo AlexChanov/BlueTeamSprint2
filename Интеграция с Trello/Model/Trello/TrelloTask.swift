@@ -36,4 +36,13 @@ public struct TrelloTask {
         idBoard = dto.idBoard ?? ""
     }
     
+    init(name: String) {
+        self.id = ""
+        self.name = name
+        self.text = ""
+        self.isClosed = false
+        self.idList = ""
+        self.idBoard = ""
+    }
+    
 }

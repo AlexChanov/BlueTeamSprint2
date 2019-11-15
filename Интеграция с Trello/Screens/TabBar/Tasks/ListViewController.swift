@@ -11,24 +11,26 @@ import UIKit
 // MARK: - Class
 public class ListViewController: UIViewController {
 	// MARK: - Properties
+    private var id: String?
 	private var initialTitle:String?
 	// tmp tasks
 	// Все этоу потому в структурку
 	// Как и название
-	private var tasks = [String]() {
+	public var tasks = [TrelloTask]() {
 		didSet {
 			let indexPath = IndexPath(row: oldValue.count, section: 0)
-			customView.tableView.insertRows(at: [indexPath], with: .fade)
-			customView.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+            customView.tableView.insertRows(at: [indexPath], with: .fade)
+//            customView.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
 		}
 	}
 }
 
 // MARK: - Init
 extension ListViewController {
-	public convenience init(with title: String) {
+    public convenience init(with title: String, id: String) {
 		self.init(nibName: nil, bundle: nil)
 		self.initialTitle = title
+        self.id = id
 	}
 }
 
@@ -74,7 +76,7 @@ extension ListViewController: UITableViewDataSource {
 	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: NestedTableViewCell.reuseIdentifier,
 												 for: indexPath) as! NestedTableViewCell
-		cell.setTextFieldText(tasks[indexPath.row])
+		cell.setTextFieldText(tasks[indexPath.row].name)
 		return cell
 	}
 }
@@ -100,7 +102,8 @@ extension ListViewController {
 			guard textField.text!.count != 0 else {
 				return
 			}
-			self.tasks.append(textField.text!)
+            self.tasks.append(TrelloTask(name: textField.text!))
+            TrelloManager.shared.addTask(for: self.id!, name: textField.text!)
 		})
 		alertController.addAction(doneAction)
 		present(alertController, animated: true, completion: nil)

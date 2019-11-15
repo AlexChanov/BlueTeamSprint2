@@ -10,7 +10,6 @@ import UIKit
 // MARK: - Class
 public class TasksViewController:UIViewController {
 	// MARK: - ViewControllers properties
-    var board = TrelloTaskBoard(dto: TrelloTaskBoardDTO())
 	var tasksChildViewControllers = [ListViewController]()
 	var addButtonViewController = AddButtonViewController()
 }
@@ -29,10 +28,10 @@ extension TasksViewController {
 	}
 	public override func viewDidLoad() {
 		super.viewDidLoad()
-        TrelloManager.shared.delegate = self
 		navigationItem.title = tabBarItem.title
 		addButtonViewControllerSetUp()
 		//
+        TrelloManager.shared.delegate = self
 		customView.collectionView.delegate = self
 		customView.collectionView.dataSource = self
 	}
@@ -52,7 +51,15 @@ extension TasksViewController {
 // MARK: - TrelloManager delegate
 extension TasksViewController: TrelloManagerDelegate {
     
-    func update(_ board: TrelloTaskBoard) {
+    func updateBoard(with board: TrelloTaskBoard) {
+        for list in board.lists {
+            let listVC = ListViewController(with: list.name, id: list.id)
+            listVC.tasks = list.tasks
+            tasksChildViewControllers.append(listVC)
+        }
+        DispatchQueue.main.async {
+            self.customView.collectionView.reloadData()
+        }
     }
     
 }
@@ -79,6 +86,7 @@ extension TasksViewController:UICollectionViewDataSource {
 	public func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 2
 	}
+    
 	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		switch section {
 		case 0:
@@ -107,7 +115,7 @@ extension TasksViewController {
 		addButtonViewController.didMove(toParent: self)
 		addButtonViewController.customView.buttonHandler = {[unowned self] title in
 			let indexPath = IndexPath(row: self.tasksChildViewControllers.count, section: 0)
-			let newTasksListViewController = ListViewController(with: title)
+            let newTasksListViewController = ListViewController(with: title, id: "")
 			self.addChild(newTasksListViewController)
 			newTasksListViewController.didMove(toParent: self)
 			self.tasksChildViewControllers.append(newTasksListViewController)
