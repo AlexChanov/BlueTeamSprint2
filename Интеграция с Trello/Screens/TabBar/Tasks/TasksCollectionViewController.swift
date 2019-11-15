@@ -10,6 +10,7 @@ import UIKit
 // MARK: - Class
 public class TasksViewController:UIViewController {
 	// MARK: - ViewControllers properties
+    var board = TrelloTaskBoard(dto: TrelloTaskBoardDTO())
 	var tasksChildViewControllers = [ListViewController]()
 	var addButtonViewController = AddButtonViewController()
 }
@@ -28,6 +29,7 @@ extension TasksViewController {
 	}
 	public override func viewDidLoad() {
 		super.viewDidLoad()
+        TrelloManager.shared.delegate = self
 		navigationItem.title = tabBarItem.title
 		addButtonViewControllerSetUp()
 		//
@@ -37,6 +39,7 @@ extension TasksViewController {
 	public override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.navigationController?.navigationBar.isTranslucent = false
+        // load board
         TrelloManager.shared.updateTaskBoard()
 	}
 	
@@ -44,6 +47,14 @@ extension TasksViewController {
 		super.viewWillDisappear(animated)
 		self.navigationController?.navigationBar.isTranslucent = false
 	}
+}
+
+// MARK: - TrelloManager delegate
+extension TasksViewController: TrelloManagerDelegate {
+    
+    func update(_ board: TrelloTaskBoard) {
+    }
+    
 }
 
 // MARK: - CollectionView delegate
