@@ -18,6 +18,7 @@ class SettingsViewController: SignInViewController {
     override func myButtonTapped() {
         UserDefaults.standard.deleteTrelloToken()
         // navigate to login screen
+        TrelloManager.shared.deleteToken()
         AppDelegate.shared.rootViewController.switchToLogout()
     }
 }

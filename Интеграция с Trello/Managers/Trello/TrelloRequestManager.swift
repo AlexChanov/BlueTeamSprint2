@@ -17,13 +17,22 @@ public final class TrelloRequestManager {
     // =
     
     private let apiKey = "ea07aac585af78ec74a3c2c3ec7976da"
-    private let token = UserDefaults.standard.getTrelloToken()
+    private var token: String {
+        get { return UserDefaults.standard.getTrelloToken() }
+    }
     
     // =
     
     public func authorization() -> URLRequest {
         let url = URL(string: "https://trello.com/1/authorize?expiration=never&scope=read,write&name=Board&response_type=\(token)&key=\(apiKey)")!
         return URLRequest(url: url)
+    }
+    
+    public func deleteToken() -> URLRequest {
+        let url = URL(string: "https://api.trello.com/1/tokens/\(token)/?key=\(apiKey)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        return request
     }
     
     public func getBoard() -> URLRequest {
@@ -43,7 +52,9 @@ public final class TrelloRequestManager {
     
     public func addTask(for listID: String, name: String) -> URLRequest {
         let url = URL(string: "https://api.trello.com/1/cards?idList=\(listID)&keepFromSource=all&name=\(name)&key=\(apiKey)&token=\(token)")!
-        return URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        return request
     }
     
 }

@@ -21,6 +21,10 @@ public final class TrelloManager {
     
     // =
     
+    public func updateTaskBoard() {
+        getBoard()
+    }
+    
     private func getBoard() {
         let session = URLSession.shared
         let boardTask = session.dataTask(with: TrelloRequestManager.shared.getBoard()) { (data, response, error) in
@@ -69,16 +73,16 @@ public final class TrelloManager {
         tasksTask.resume()
     }
     
-    public func updateTaskBoard() {
-        getBoard()
-    }
-    
     public func addTask(for listID: String, name: String) {
         let session = URLSession.shared
-        var request = TrelloRequestManager.shared.addTask(for: listID, name: name)
-        request.httpMethod = "POST"
-        let addTask = session.dataTask(with: request)
+        let addTask = session.dataTask(with: TrelloRequestManager.shared.addTask(for: listID, name: name))
         addTask.resume()
+    }
+    
+    public func deleteToken() {
+        let session = URLSession.shared
+        let deleteTokenTask = session.dataTask(with: TrelloRequestManager.shared.deleteToken())
+        deleteTokenTask.resume()
     }
     
 }

@@ -54,6 +54,8 @@ extension TasksViewController: TrelloManagerDelegate {
     func updateBoard(with board: TrelloTaskBoard) {
         for list in board.lists {
             let listVC = ListViewController(with: list.name, id: list.id)
+            self.addChild(listVC)
+            listVC.didMove(toParent: self)
             listVC.tasks = list.tasks
             tasksChildViewControllers.append(listVC)
         }
