@@ -28,7 +28,7 @@ public final class AuthorizationVC: UIViewController, WKNavigationDelegate {
         closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
         //
         webView.navigationDelegate = self
-        webView.load(TrelloManager.shared.authorizationRequest())
+        webView.load(TrelloRequestManager.shared.authorization())
     }
 
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

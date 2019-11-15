@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
 		//
+        TrelloManager.shared.initTask()
         return true
     }
 }
