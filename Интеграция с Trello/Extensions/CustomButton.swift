@@ -11,7 +11,7 @@ import UIKit
 extension UIButton {
     
     public static func system(with title: String) -> Self {
-        let button = Self()
+        let button = self.init()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .darkBlue
         button.layer.cornerRadius = 10
