@@ -26,6 +26,26 @@ public final class TrelloManager {
         return URLRequest(url: url)
     }
     
+    public func getTaskBoard() {
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        let url = URL(string: "https://api.trello.com/1/members/me/boards?" + "key=\(apiKey)" +
+                                                    "&token=\(UserDefaults.standard.getTrelloToken())")!
+        let request = URLRequest(url: url)
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            do {
+                let boards = try JSONDecoder().decode([TrelloTaskBoardDTO].self, from: data!)
+                
+            }
+            catch {
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    
 }
 
 
