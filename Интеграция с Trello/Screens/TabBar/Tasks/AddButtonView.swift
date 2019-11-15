@@ -10,7 +10,6 @@ import UIKit
 
 // MARK: - Class
 public class AddButtonView: UIView {
-	
 	// MARK: - Button completion handler
 	public var buttonHandler: ((String) -> ())?
 
@@ -23,15 +22,10 @@ public class AddButtonView: UIView {
 								  toItem: nil,
 								  attribute: .height,
 								  multiplier: 1,
-								  constant: frame.height / 12)
+								  constant: frame.height / 8)
 	}()
 	private let addButton:UIButton = {
-		let button = UIButton()
-		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setTitle("Add", for: .normal)
-		button.titleLabel?.textAlignment = .center
-		button.backgroundColor = .blue
-		button.layer.cornerRadius = 10
+		let button = UIButton.system(with: "Add")
 		button.addTarget(self, action: #selector(addButtonSelector),
 						 for: .touchUpInside)
 		return button
@@ -92,7 +86,6 @@ extension AddButtonView {
 		addButton.leadingAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.leadingAnchor).isActive = true
 		addButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
 		addButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-
 	}
 	private func textFieldLayout() {
 		addSubview(textFieldBackgroundView)
@@ -130,8 +123,10 @@ extension AddButtonView {
 	// add button
 	@objc private func addButtonSelector() {
 		addButton.isEnabled = false
-		UIView.animate(withDuration: 0.5, animations: {[unowned self] in
+		UIView.animate(withDuration: 0.2, animations: {[unowned self] in
 			self.addButton.titleLabel?.alpha = 0
+		})
+		UIView.animate(withDuration: 0.5, animations: {[unowned self] in
 			self.buttonHeightConstraint.constant *= 2
 			self.buttonsStackLayout()
 			self.textFieldLayout()

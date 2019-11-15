@@ -13,7 +13,7 @@ final class RootViewController: UIViewController {
     private var current: UIViewController
     
     init() {
-        self.current = WelcomeViewController()
+        self.current = PresentViewController()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -49,7 +49,10 @@ final class RootViewController: UIViewController {
     public func switchToMainScreen() {
         animateFadeTransition(to: MyTabBarController())
     }
-    
+
+    public func switchToWelcomScreen() {
+        animateFadeTransition(to: WelcomeViewController())
+    }
     public func switchToLogout() {
         let logoutScreen = UINavigationController(rootViewController: LoginViewController())
         animateDismissTransition(to: logoutScreen)

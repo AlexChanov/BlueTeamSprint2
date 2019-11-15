@@ -10,12 +10,11 @@ import UIKit
 
 extension UIButton {
     
-    public static func system(with title: String) -> UIButton {
-        let button = UIButton(type: .system)
-        button.frame.size = CGSize(width: 200, height: 50)
+    public static func system(with title: String) -> Self {
+        let button = self.init()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .darkBlue
         button.layer.cornerRadius = 10
-        // title
         button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .buttonTitle
@@ -32,5 +31,4 @@ extension UIButton {
         button.tintColor = .black
         return button
     }
-    
 }

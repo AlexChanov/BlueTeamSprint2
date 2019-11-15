@@ -9,12 +9,10 @@
 import Foundation
 
 extension UserDefaults {
-    
     private enum UserDefaultsKeys: String {
         case trelloToken
     }
-    
-    
+
     public func setTrelloToken(_ token: String) {
         set(token, forKey: UserDefaultsKeys.trelloToken.rawValue)
         synchronize()
@@ -31,5 +29,4 @@ extension UserDefaults {
     public func deleteTrelloToken() {
         setTrelloToken("")
     }
-    
 }

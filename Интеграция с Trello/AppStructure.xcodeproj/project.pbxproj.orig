@@ -3,14 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CC23802237E8D1E009C710E /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC23801237E8D1E009C710E /* PresentViewController.swift */; };
+		1CC23804237E8D55009C710E /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC23803237E8D55009C710E /* CustomView.swift */; };
 		1CE273A923781EB600198E7F /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE273A823781EB600198E7F /* NotesTableViewCell.swift */; };
 		78406AD6237AD6AD008794F0 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78406AD5237AD6AD008794F0 /* CustomTextView.swift */; };
 		78406AD8237AD813008794F0 /* UIKitForProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78406AD7237AD813008794F0 /* UIKitForProject.swift */; };
 		78406ADA237ADA78008794F0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78406AD9237ADA78008794F0 /* CustomButton.swift */; };
+		78434453237D8CEA000BC559 /* TrelloTaskBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78434452237D8CEA000BC559 /* TrelloTaskBoard.swift */; };
+		78434455237D8D1D000BC559 /* TrelloTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78434454237D8D1D000BC559 /* TrelloTaskList.swift */; };
+		78434457237D8D2C000BC559 /* TrelloTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78434456237D8D2C000BC559 /* TrelloTask.swift */; };
+		7843445A237D8F9F000BC559 /* TrelloTaskBoardDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78434459237D8F9F000BC559 /* TrelloTaskBoardDTO.swift */; };
+		7843445C237D8FDD000BC559 /* TrelloTaskListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7843445B237D8FDD000BC559 /* TrelloTaskListDTO.swift */; };
+		7843445E237D9003000BC559 /* TrelloTaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7843445D237D9003000BC559 /* TrelloTaskDTO.swift */; };
+		7870234B237CB00100B93766 /* TrelloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7870234A237CB00100B93766 /* TrelloManager.swift */; };
+		7870234D237CB34E00B93766 /* AuthorizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7870234C237CB34E00B93766 /* AuthorizationVC.swift */; };
 		A438A175237986EE000651BE /* TextDataUpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */; };
 		A45CBD3D237BF31A005C9B72 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45CBD3C237BF31A005C9B72 /* GradientButton.swift */; };
 		A4EC3DC023794020003764C9 /* NestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */; };
@@ -38,10 +48,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CC23801237E8D1E009C710E /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		1CC23803237E8D55009C710E /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		1CE273A823781EB600198E7F /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		78406AD5237AD6AD008794F0 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		78406AD7237AD813008794F0 /* UIKitForProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitForProject.swift; sourceTree = "<group>"; };
 		78406AD9237ADA78008794F0 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		78434452237D8CEA000BC559 /* TrelloTaskBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTaskBoard.swift; sourceTree = "<group>"; };
+		78434454237D8D1D000BC559 /* TrelloTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTaskList.swift; sourceTree = "<group>"; };
+		78434456237D8D2C000BC559 /* TrelloTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTask.swift; sourceTree = "<group>"; };
+		78434459237D8F9F000BC559 /* TrelloTaskBoardDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTaskBoardDTO.swift; sourceTree = "<group>"; };
+		7843445B237D8FDD000BC559 /* TrelloTaskListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTaskListDTO.swift; sourceTree = "<group>"; };
+		7843445D237D9003000BC559 /* TrelloTaskDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloTaskDTO.swift; sourceTree = "<group>"; };
+		7870234A237CB00100B93766 /* TrelloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrelloManager.swift; sourceTree = "<group>"; };
+		7870234C237CB34E00B93766 /* AuthorizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVC.swift; sourceTree = "<group>"; };
 		A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDataUpdateProtocol.swift; sourceTree = "<group>"; };
 		A45CBD3C237BF31A005C9B72 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,10 +116,48 @@
 			isa = PBXGroup;
 			children = (
 				C960C5202375A70F002703DC /* WelcomeViewController.swift */,
+				1CC23801237E8D1E009C710E /* PresentViewController.swift */,
 				C96AD84F237728BA00D9C6D0 /* Login */,
 				C96463822375CEB8000C33B5 /* TabBar */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		7843444F237D8B94000BC559 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7870234A237CB00100B93766 /* TrelloManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		78434450237D8BB3000BC559 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78434451237D8CBB000BC559 /* Trello */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78434451237D8CBB000BC559 /* Trello */ = {
+			isa = PBXGroup;
+			children = (
+				78434458237D8F83000BC559 /* DTO */,
+				78434452237D8CEA000BC559 /* TrelloTaskBoard.swift */,
+				78434454237D8D1D000BC559 /* TrelloTaskList.swift */,
+				78434456237D8D2C000BC559 /* TrelloTask.swift */,
+			);
+			path = Trello;
+			sourceTree = "<group>";
+		};
+		78434458237D8F83000BC559 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				78434459237D8F9F000BC559 /* TrelloTaskBoardDTO.swift */,
+				7843445B237D8FDD000BC559 /* TrelloTaskListDTO.swift */,
+				7843445D237D9003000BC559 /* TrelloTaskDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		A4EC3DB623793FE3003764C9 /* Tasks */ = {
@@ -126,6 +184,7 @@
 				78406AD5237AD6AD008794F0 /* CustomTextView.swift */,
 				78406AD9237ADA78008794F0 /* CustomButton.swift */,
 				A45CBD3C237BF31A005C9B72 /* GradientButton.swift */,
+				1CC23803237E8D55009C710E /* CustomView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -134,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				78406AD4237AD448008794F0 /* Screens */,
+				7843444F237D8B94000BC559 /* Managers */,
+				78434450237D8BB3000BC559 /* Model */,
 				C952FAE52375EC2F009DB26C /* Extensions */,
 				C960C5132375A555002703DC /* Assets.xcassets */,
 				C960C50B2375A54F002703DC /* AppStructure */,
@@ -176,6 +237,7 @@
 			children = (
 				C960C5222375A72D002703DC /* LoginViewController.swift */,
 				C964637C2375C8E6000C33B5 /* SignInViewController.swift */,
+				7870234C237CB34E00B93766 /* AuthorizationVC.swift */,
 				C964637E2375C8F8000C33B5 /* SignUpViewController.swift */,
 			);
 			path = Login;
@@ -217,7 +279,7 @@
 				};
 			};
 			buildConfigurationList = C960C5042375A54F002703DC /* Build configuration list for PBXProject "AppStructure" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -256,6 +318,15 @@
 				C960C5232375A72D002703DC /* LoginViewController.swift in Sources */,
 				A4EC3DC023794020003764C9 /* NestedTableViewCell.swift in Sources */,
 				78406ADA237ADA78008794F0 /* CustomButton.swift in Sources */,
+				7870234B237CB00100B93766 /* TrelloManager.swift in Sources */,
+<<<<<<< HEAD
+				7843445C237D8FDD000BC559 /* TrelloTaskListDTO.swift in Sources */,
+				78434455237D8D1D000BC559 /* TrelloTaskList.swift in Sources */,
+				7843445E237D9003000BC559 /* TrelloTaskDTO.swift in Sources */,
+				7843445A237D8F9F000BC559 /* TrelloTaskBoardDTO.swift in Sources */,
+=======
+				1CC23802237E8D1E009C710E /* PresentViewController.swift in Sources */,
+>>>>>>> 2297fe4484a72100a0af866528a82cfacd551486
 				A4EC3DC323794020003764C9 /* ListView.swift in Sources */,
 				C964637F2375C8F8000C33B5 /* SignUpViewController.swift in Sources */,
 				C942940B2375D23F0077AD8A /* SettingsViewController.swift in Sources */,
@@ -264,16 +335,20 @@
 				1CE273A923781EB600198E7F /* NotesTableViewCell.swift in Sources */,
 				A4EC3DC123794020003764C9 /* UsefulCell.swift in Sources */,
 				C94294092375D2350077AD8A /* NotesViewController.swift in Sources */,
+				1CC23804237E8D55009C710E /* CustomView.swift in Sources */,
 				A4EC3DC623794020003764C9 /* TasksCollectionViewController.swift in Sources */,
 				A438A175237986EE000651BE /* TextDataUpdateProtocol.swift in Sources */,
 				C960C51F2375A5D7002703DC /* RootViewController.swift in Sources */,
 				C942940D2375DA830077AD8A /* EditNoteViewController.swift in Sources */,
+				7870234D237CB34E00B93766 /* AuthorizationVC.swift in Sources */,
 				A4EC3DC223794020003764C9 /* AddButtonViewController.swift in Sources */,
 				C960C50D2375A54F002703DC /* AppDelegate.swift in Sources */,
+				78434457237D8D2C000BC559 /* TrelloTask.swift in Sources */,
 				A4EC3DC523794020003764C9 /* HasCustomViewProtocol.swift in Sources */,
 				A4EC3DC423794020003764C9 /* AddButtonView.swift in Sources */,
 				78406AD8237AD813008794F0 /* UIKitForProject.swift in Sources */,
 				78406AD6237AD6AD008794F0 /* CustomTextView.swift in Sources */,
+				78434453237D8CEA000BC559 /* TrelloTaskBoard.swift in Sources */,
 				A45CBD3D237BF31A005C9B72 /* GradientButton.swift in Sources */,
 				C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */,
 				A4EC3DC723794020003764C9 /* ListViewController.swift in Sources */,
@@ -345,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -400,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -421,7 +496,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.nurmatov.ikhtiyor.AppStructurejh;
+				PRODUCT_BUNDLE_IDENTIFIER = me.nurmatov.ikhtiyor.AppStructureaSDAsd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -439,7 +514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.nurmatov.ikhtiyor.AppStructurejh;
+				PRODUCT_BUNDLE_IDENTIFIER = me.nurmatov.ikhtiyor.AppStructureaSDAsd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

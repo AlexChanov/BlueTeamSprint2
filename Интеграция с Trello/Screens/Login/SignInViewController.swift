@@ -8,26 +8,35 @@
 
 import UIKit
 
-final class SignInViewController: UIViewController {
+class SignInViewController: UIViewController {
+
+    let mainButton: GradientButton = {
+        let button = GradientButton.system(with: "Sign in")
+        button.addTarget(self, action: #selector(myButtonTapped), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Регистрация"
         view.backgroundColor = .white
-        // button
-        let myButton = UIButton.system(with: "Нажмите" + "\n" + "на кнопку")
-        myButton.addTarget(self, action: #selector(myButtonTapped), for: .touchUpInside)
-        myButton.titleLabel?.numberOfLines = 2
-        myButton.center = view.center
-        view.addSubview(myButton)
+        buttonLayout()
+        title = "Sign in"
     }
-    
 
     @objc
-    private func myButtonTapped() {
+    func myButtonTapped() {
         modalTransitionStyle = .coverVertical
         modalPresentationStyle = .fullScreen
         present(AuthorizationVC(), animated: true, completion: nil)
     }
+}
 
+extension SignInViewController {
+    private func buttonLayout() {
+        view.addSubview(mainButton)
+        mainButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.7).isActive = true
+        mainButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        mainButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mainButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
 }

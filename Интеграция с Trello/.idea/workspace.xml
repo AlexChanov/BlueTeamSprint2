@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e7c6ef70-6247-4d87-8f8e-ffc5a97bf09e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/Login/LoginViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/Login/LoginViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/TabBar/Notes/NotesTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/TabBar/Notes/NotesTableViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/TabBar/Notes/NotesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/TabBar/Notes/NotesViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/TabBar/Tasks/AddButtonView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/TabBar/Tasks/AddButtonView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screens/WelcomeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Screens/WelcomeViewController.swift" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_7065d17c9685de5fc44b2b7ca82d1aa9cc79f2b8" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1Tc6M5OsX8oeYzteOYRl8bxLn8I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppStructure" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="AppStructure" TARGET_NAME="AppStructure" CONFIG_NAME="Debug" SCHEME_NAME="AppStructure" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="AppStructure" RUN_TARGET_NAME="AppStructure" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7c6ef70-6247-4d87-8f8e-ffc5a97bf09e" name="Default Changelist" comment="" />
+      <created>1573746986177</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573746986177</updated>
+      <workItem from="1573746992352" duration="7864000" />
+      <workItem from="1573759964515" duration="1069000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

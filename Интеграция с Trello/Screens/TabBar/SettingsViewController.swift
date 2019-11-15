@@ -8,24 +8,16 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-
+class SettingsViewController: SignInViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        // button
-        let signOutButton = UIButton.system(with: "Sign out")
-        signOutButton.addTarget(self, action: #selector(signOutButtonTapped), for: .touchUpInside)
-        signOutButton.center = view.center
-        view.addSubview(signOutButton)
-        
+        title = "Settings"
+        mainButton.setTitle("Sign out", for: .normal)
     }
-    
-    @objc
-    private func signOutButtonTapped() {
-       UserDefaults.standard.deleteTrelloToken()
+
+    override func myButtonTapped() {
+        UserDefaults.standard.deleteTrelloToken()
         // navigate to login screen
         AppDelegate.shared.rootViewController.switchToLogout()
     }
-    
 }

@@ -9,10 +9,19 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
-    
+    // MARK: - Layout
+    private let buttonsStack:UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        stackView.axis = .vertical
+        return stackView
+    }()
+
     let bearImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "Login"))
-        imageView.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -24,18 +33,18 @@ final class LoginViewController: UIViewController {
         // navBar
         navigationController?.navigationBar.tintColor = .black
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        // image
-        view.addSubview(bearImageView)
         // signIn button
         let signInButton = UIButton.system(with: "Sign in")
         signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
-        signInButton.frame.origin = CGPoint(x: 100, y: 300)
-        view.addSubview(signInButton)
-        // signUp button
+//         signUp button
         let signUpButton = UIButton.system(with: "Sign up")
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
-        signUpButton.frame.origin = CGPoint(x: 100, y: 370)
-        view.addSubview(signUpButton)
+        // stack
+        buttonsStack.addArrangedSubview(signInButton)
+        buttonsStack.addArrangedSubview(signUpButton)
+        stackLayout()
+        // image
+        imageLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,8 +54,7 @@ final class LoginViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
-    
-    
+
     @objc
     private func signInButtonTapped() {
         navigationController?.pushViewController(SignInViewController(), animated: true)
@@ -56,5 +64,22 @@ final class LoginViewController: UIViewController {
     private func signUpButtonTapped() {
         navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
-    
+}
+
+// MARK: - Layout
+extension LoginViewController {
+    private func stackLayout() {
+        view.addSubview(buttonsStack)
+        buttonsStack.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.7).isActive = true
+        buttonsStack.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        buttonsStack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        buttonsStack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    private func imageLayout() {
+        view.addSubview(bearImageView)
+        bearImageView.widthAnchor.constraint(equalTo: buttonsStack.widthAnchor).isActive = true
+        bearImageView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        bearImageView.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor).isActive = true
+        bearImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
 }
