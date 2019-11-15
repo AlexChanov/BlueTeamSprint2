@@ -11,7 +11,7 @@ import UIKit
 class PresentViewController: UIViewController {
     
     private let blackCard = CustomView()
-    private let greenCard = CustomView()
+    private let grayCard = CustomView()
     private let blueCard = CustomView()
     private let redCard = CustomView()
     private let tappImage = UIImageView()
@@ -21,57 +21,20 @@ class PresentViewController: UIViewController {
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.textAlignment = .center
         textLabel.font = UIFont.boldSystemFont(ofSize: 40)
-        
         textLabel.text = "Trello"
         return textLabel
     }()
-    
-    let frameY = 300
-    let frameX = 50
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        redCard.frame = CGRect(x: frameX+90, y: frameY+30, width: 200, height: 200)
-        redCard.label.text = "Оранжевая команда"
-        redCard.backgroundColor = .orange
-        
-        greenCard.frame = CGRect(x: frameX+60, y: frameY+20, width: 200, height: 200)
-        greenCard.label.text = "Cерая команда"
-        greenCard.backgroundColor = .gray
-        
-        
-        blueCard.frame = CGRect(x: frameX+30, y: frameY+10, width: 200, height: 200)
-        blueCard.label.text = "Синяя команда"
-        blueCard.backgroundColor = .darkBlue
-        
-        
-        blackCard.frame = CGRect(x: frameX, y: frameY, width: 200, height: 200)
-        blackCard.label.text = "Черная команда"
-        blackCard.backgroundColor = .black
-        
-        
-        tappImage.image = UIImage(named: "tappingImage")
-        tappImage.center.y = self.view.center.y + 100
-        tappImage.center.x = self.view.center.x
-        tappImage.frame.size = CGSize(width: 100, height: 150)
-        
-        self.view.addSubview(blackCard)
-        self.view.addSubview(blueCard)
-        self.view.addSubview(greenCard)
-        self.view.addSubview(redCard)
-        self.view.addSubview(tappImage)
-        self.view.addSubview(trelloLabel)
+        viewLayout()
         labelLayout()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         animateViews()
-        
     }
-    
     
     private func animateViews() {
         
@@ -108,13 +71,14 @@ class PresentViewController: UIViewController {
         }
         
         UIView.animate(withDuration: 1, delay: 1.5, options: [], animations: {
-            self.redCard.frame = CGRect(x: self.frameX+1090, y: self.frameX+30, width: 200, height: 200)
+            let widthView = self.view.frame.width/2
+            self.redCard.frame = CGRect(x: self.grayCard.frame.maxX + 1000, y: self.grayCard.frame.maxY - 500, width: widthView, height: widthView)
             
         }) { (result) in
             
             UIView.animate(withDuration: 1, delay: 1.2 , options: [], animations: {
-                self.greenCard.frame = CGRect(x: self.frameX-1090, y: self.frameX+30, width: 200, height: 200)
-                
+                let widthView = self.view.frame.width/2
+                self.grayCard.frame = CGRect(x: self.grayCard.frame.maxX - 1000, y: self.grayCard.frame.maxY + 200, width: widthView, height: widthView)
             }) { (result) in
                 UIView.animate(withDuration: 0.5, delay: 1, options: [.autoreverse], animations: {
                     self.tappImage.frame.size = CGSize(width: self.tappImage.frame.width * 2, height: self.tappImage.frame.height * 2)
@@ -130,13 +94,11 @@ class PresentViewController: UIViewController {
         }
     }
     
-    
     private func animationImage() {
         UIView.animate(withDuration: 0.3, animations: {
             self.blueCard.transform = CGAffineTransform(scaleX: 10 ,y: 10)
             self.blackCard.layer.opacity = 0
             self.blueCard.transform = CGAffineTransform(rotationAngle: 361)
-            self.blueCard.transform = CGAffineTransform(rotationAngle: 180)
         }) { (Bool) in
             AppDelegate.shared.rootViewController.switchToWelcomScreen()
         }
@@ -149,8 +111,48 @@ extension PresentViewController {
     private func labelLayout() {
         view.addSubview(trelloLabel)
         let margins = view.layoutMarginsGuide
+        trelloLabel.bottomAnchor.constraint(lessThanOrEqualTo: blackCard.topAnchor, constant: -60).isActive = true
+        trelloLabel.heightAnchor.constraint(equalToConstant: 100)
         trelloLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-        trelloLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 100).isActive = true
         trelloLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+    }
+    
+    private func viewLayout() {
+        let widthView = view.frame.width/2
+        let viewCenterX = self.view.center.x
+        let viewCenterY = self.view.center.y
+        
+        
+        redCard.frame = CGRect(x: viewCenterX-70, y: viewCenterY-80, width: widthView, height: widthView)
+        redCard.label.text = "Оранжевая команда"
+        redCard.backgroundColor = .orange
+        
+        
+        grayCard.frame = CGRect(x: viewCenterX-90, y: viewCenterY-100, width: widthView, height: widthView)
+        grayCard.label.text = "Cерая команда"
+        grayCard.backgroundColor = .gray
+        
+        
+        blueCard.frame = CGRect(x: viewCenterX-110, y: viewCenterY-120, width: widthView, height: widthView)
+        blueCard.label.text = "Синяя команда"
+        blueCard.backgroundColor = .darkBlue
+        
+        
+        blackCard.frame = CGRect(x: viewCenterX-130, y: viewCenterY-140, width: widthView, height: widthView)
+        blackCard.label.text = "Черная команда"
+        blackCard.backgroundColor = .black
+        
+        
+        tappImage.image = UIImage(named: "tappingImage")
+        tappImage.center.y = self.view.center.y + 200
+        tappImage.center.x = self.view.center.x
+        tappImage.frame.size = CGSize(width: blackCard.frame.width/2, height: blackCard.frame.width/1.5)
+        
+        
+        self.view.addSubview(blackCard)
+        self.view.addSubview(blueCard)
+        self.view.addSubview(grayCard)
+        self.view.addSubview(redCard)
+        self.view.addSubview(tappImage)
     }
 }

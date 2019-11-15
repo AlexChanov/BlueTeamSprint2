@@ -17,14 +17,14 @@ class CustomView: UIView {
         
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 18.0)
+        label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
         self.addSubview(label)
-        
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-        label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2).isActive = true
-        label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -2).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 40)
+        label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        label.widthAnchor.constraint(equalToConstant: self.frame.width*0.8)
         
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 1
