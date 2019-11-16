@@ -35,12 +35,12 @@ public final class AuthorizationVC: UIViewController, WKNavigationDelegate {
         webView.evaluateJavaScript("document.documentElement.outerHTML.toString()") { (html, error) in
             guard let html = html as? String else { return }
             let range = NSRange(location: 0, length: html.count)
-            let regex = try! NSRegularExpression(pattern: "<pre>[a-z0-9]{1,100}</pre>")
+            let regex = try! NSRegularExpression(pattern: "<pre>[a-z0-9]{64}</pre>")
             let match = regex.firstMatch(in: html, options: [], range: range)
             
             guard let _match = match else { return }
             let tokenStr = String(html[Range(_match.range, in: html)!])
-            let tokenRange = Range(NSRange(location: 5, length: tokenStr.count - 11), in: tokenStr)
+            let tokenRange = Range(NSRange(location: 5, length: 64), in: tokenStr)
             let token = String(tokenStr.substring(with: tokenRange!))
             UserDefaults.standard.setTrelloToken(token)
             AppDelegate.shared.rootViewController.switchToMainScreen()

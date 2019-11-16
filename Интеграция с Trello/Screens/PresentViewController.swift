@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PresentViewController: UIViewController {
+final class PresentViewController: UIViewController {
     
     private let blackCard = CustomView()
     private let grayCard = CustomView()
     private let blueCard = CustomView()
     private let redCard = CustomView()
-    private let tappImage = UIImageView()
+    private let tapImage = UIImageView()
     
     private let trelloLabel: UILabel = {
         let textLabel = UILabel()
@@ -38,76 +38,64 @@ class PresentViewController: UIViewController {
     
     private func animateViews() {
         
-        UIView.animate(withDuration: 1, delay: 0.5, options: [], animations: {
-            self.tappImage.center.x = self.redCard.center.x
-            self.tappImage.center.y = self.redCard.center.y + 30.00
-            
+        UIView.animate(withDuration: 1, delay: 0.5, animations: {
+            self.tapImage.center.x = self.redCard.center.x
+            self.tapImage.center.y = self.redCard.center.y + 30.00
         }) { (result) in
-            UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
-                self.tappImage.center.x = self.tappImage.center.x + 40
-                
-            }, completion: { (result) in
-                
-                UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-                    self.tappImage.center.x = self.tappImage.center.x - 60
-                    
-                }, completion: { (result) in
-                    
-                    UIView.animate(withDuration: 0.1, delay: 1.5, options: [], animations: {
-                        self.tappImage.center.x = self.tappImage.center.x - 40
-                        
-                    }, completion: { (result) in
-                        UIImageView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-                            self.tappImage.center.x = self.tappImage.center.x + 30
-                            
-                        }, completion: { (result) in
-                            
+            UIView.animate(withDuration: 0.2, delay: 0.5, animations: {
+                self.tapImage.center.x = self.tapImage.center.x + 40
+            }) { (result) in
+                UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                    self.tapImage.center.x = self.tapImage.center.x - 60
+                }) { (result) in
+                    UIView.animate(withDuration: 0.2, delay: 0.5, animations: {
+                        self.tapImage.center.x = self.tapImage.center.x - 40
+                    }) { (result) in
+                        UIImageView.animate(withDuration: 0.5, delay: 0, animations: {
+                            self.tapImage.center.x = self.tapImage.center.x + 30
                         })
-                        
-                    })
-                })
-                
-            })
+                    }
+                }
+            }
         }
         
-        UIView.animate(withDuration: 1, delay: 1.5, options: [], animations: {
+        UIView.animate(withDuration: 1.1, delay: 2, animations: {
             let widthView = self.view.frame.width/2
             self.redCard.frame = CGRect(x: self.grayCard.frame.maxX + 1000, y: self.grayCard.frame.maxY - 500, width: widthView, height: widthView)
-            
         }) { (result) in
-            
-            UIView.animate(withDuration: 1, delay: 1.2 , options: [], animations: {
+            UIView.animate(withDuration: 1.1, delay: 0.1, animations: {
                 let widthView = self.view.frame.width/2
                 self.grayCard.frame = CGRect(x: self.grayCard.frame.maxX - 1000, y: self.grayCard.frame.maxY + 200, width: widthView, height: widthView)
             }) { (result) in
-                UIView.animate(withDuration: 0.5, delay: 1, options: [.autoreverse], animations: {
-                    self.tappImage.frame.size = CGSize(width: self.tappImage.frame.width * 2, height: self.tappImage.frame.height * 2)
-                    
-                }, completion: { (result) in
-                    self.tappImage.isHidden = true
+                UIView.animate(withDuration: 0.5, delay: 0.3, options: .autoreverse, animations: {
+                    self.tapImage.frame.size = CGSize(width: self.tapImage.frame.width * 2, height: self.tapImage.frame.height * 2)
+                }) { (result) in
+                    self.tapImage.isHidden = true
                     self.trelloLabel.isHidden = true
                     self.animationImage()
-                    
-                })
+                }
             }
-            
         }
     }
     
     private func animationImage() {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.blueCard.alpha = 0
             self.blueCard.transform = CGAffineTransform(scaleX: 10 ,y: 10)
             self.blackCard.layer.opacity = 0
             self.blueCard.transform = CGAffineTransform(rotationAngle: 361)
-        }) { (Bool) in
+        }) { (result) in
             AppDelegate.shared.rootViewController.switchToWelcomScreen()
         }
     }
+    
 }
+
 
 
 // MARK: - Layout
 extension PresentViewController {
+    
     private func labelLayout() {
         view.addSubview(trelloLabel)
         let margins = view.layoutMarginsGuide
@@ -143,16 +131,17 @@ extension PresentViewController {
         blackCard.backgroundColor = .black
         
         
-        tappImage.image = UIImage(named: "TapFinger")
-        tappImage.center.y = self.view.center.y + 200
-        tappImage.center.x = self.view.center.x
-        tappImage.frame.size = CGSize(width: blackCard.frame.width/2, height: blackCard.frame.width/1.5)
+        tapImage.image = UIImage(named: "TapFinger")
+        tapImage.center.y = self.view.center.y + 200
+        tapImage.center.x = self.view.center.x
+        tapImage.frame.size = CGSize(width: blackCard.frame.width/2, height: blackCard.frame.width/1.5)
         
         
         self.view.addSubview(blackCard)
         self.view.addSubview(blueCard)
         self.view.addSubview(grayCard)
         self.view.addSubview(redCard)
-        self.view.addSubview(tappImage)
+        self.view.addSubview(tapImage)
     }
+    
 }

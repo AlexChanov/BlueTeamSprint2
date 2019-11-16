@@ -164,14 +164,6 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
-		785906BE237F2908002A0650 /* Trello */ = {
-			isa = PBXGroup;
-			children = (
-				785906BC237F28FF002A0650 /* TrelloManagerDelegate.swift */,
-			);
-			path = Trello;
-			sourceTree = "<group>";
-		};
 		786F3161237EF75A00EEC665 /* Trello */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +171,23 @@
 				786F3162237EF77C00EEC665 /* TrelloRequestManager.swift */,
 			);
 			path = Trello;
+			sourceTree = "<group>";
+		};
+		787AD40F237F7A6B00906A5E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				785906BC237F28FF002A0650 /* TrelloManagerDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		787AD410237F7A8700906A5E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A45CBD3C237BF31A005C9B72 /* GradientButton.swift */,
+				1CC23803237E8D55009C710E /* CustomView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A4EC3DB623793FE3003764C9 /* Tasks */ = {
@@ -200,13 +209,10 @@
 		C952FAE52375EC2F009DB26C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				785906BE237F2908002A0650 /* Trello */,
 				78406AD7237AD813008794F0 /* UIKitForProject.swift */,
 				C952FAE62375ECAF009DB26C /* HelperUserDefaults.swift */,
 				78406AD5237AD6AD008794F0 /* CustomTextView.swift */,
 				78406AD9237ADA78008794F0 /* CustomButton.swift */,
-				A45CBD3C237BF31A005C9B72 /* GradientButton.swift */,
-				1CC23803237E8D55009C710E /* CustomView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +223,8 @@
 				78406AD4237AD448008794F0 /* Screens */,
 				7843444F237D8B94000BC559 /* Managers */,
 				78434450237D8BB3000BC559 /* Model */,
+				787AD410237F7A8700906A5E /* Components */,
+				787AD40F237F7A6B00906A5E /* Protocols */,
 				C952FAE52375EC2F009DB26C /* Extensions */,
 				C960C5132375A555002703DC /* Assets.xcassets */,
 				C960C50B2375A54F002703DC /* AppStructure */,

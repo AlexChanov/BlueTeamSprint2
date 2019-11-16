@@ -24,7 +24,7 @@ public final class TrelloRequestManager {
     // =
     
     public func authorization() -> URLRequest {
-        let url = URL(string: "https://trello.com/1/authorize?expiration=never&scope=read,write&name=Board&response_type=\(token)&key=\(apiKey)")!
+        let url = URL(string: "https://trello.com/1/authorize?expiration=never&scope=read,write&name=Board&response_type=token&key=\(apiKey)")!
         return URLRequest(url: url)
     }
     

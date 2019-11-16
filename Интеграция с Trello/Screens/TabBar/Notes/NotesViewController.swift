@@ -36,6 +36,7 @@ public class NotesViewController: UIViewController {
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
 															target: self,
 															action: #selector(composeTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .black
 		setupLayout()
 		tableView.dataSource = self
 		tableView.delegate = self

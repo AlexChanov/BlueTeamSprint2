@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomView: UIView {
+final class CustomView: UIView {
     
     let label = UILabel()
     
