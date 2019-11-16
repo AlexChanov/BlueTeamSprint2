@@ -57,6 +57,13 @@ public final class TrelloRequestManager {
         return request
     }
     
+    public func deleteTask(for taskID: String) -> URLRequest {
+        let url = URL(string: "https://api.trello.com/1/cards/\(taskID)?key=\(apiKey)&token=\(token)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        return request
+    }
+    
 }
 
 

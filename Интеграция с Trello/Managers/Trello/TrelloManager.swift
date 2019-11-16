@@ -79,6 +79,12 @@ public final class TrelloManager {
         addTask.resume()
     }
     
+    public func deleteTask(for taskID: String) {
+        let session = URLSession.shared
+        let deleteTask = session.dataTask(with: TrelloRequestManager.shared.deleteTask(for: taskID))
+        deleteTask.resume()
+    }
+    
     public func deleteToken() {
         let session = URLSession.shared
         let deleteTokenTask = session.dataTask(with: TrelloRequestManager.shared.deleteToken())
