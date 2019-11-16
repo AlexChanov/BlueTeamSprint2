@@ -80,9 +80,9 @@ final class PresentViewController: UIViewController {
     
     private func animationImage() {
         UIView.animate(withDuration: 0.5, animations: {
+            self.blackCard.alpha = 0
             self.blueCard.alpha = 0
             self.blueCard.transform = CGAffineTransform(scaleX: 10 ,y: 10)
-            self.blackCard.layer.opacity = 0
             self.blueCard.transform = CGAffineTransform(rotationAngle: 361)
         }) { (result) in
             AppDelegate.shared.rootViewController.switchToWelcomScreen()
