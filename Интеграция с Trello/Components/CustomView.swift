@@ -24,7 +24,7 @@ final class CustomView: UIView {
         label.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
         label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
-        label.widthAnchor.constraint(equalToConstant: self.frame.width*0.8)
+//        label.widthAnchor.constraint(equalToConstant: self.frame.width*0.8)
         
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 1

@@ -14,13 +14,11 @@ public class ListViewController: UIViewController {
     private var id: String?
 	private var initialTitle:String?
 	// tmp tasks
-	// Все этоу потому в структурку
-	// Как и название
+
 	public var tasks = [TrelloTask]() {
 		didSet {
 			let indexPath = IndexPath(row: oldValue.count, section: 0)
             customView.tableView.insertRows(at: [indexPath], with: .fade)
-//            customView.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
 		}
 	}
 }
@@ -85,6 +83,20 @@ extension ListViewController:UITableViewDelegate {
 	public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return tableView.bounds.height / 8
 	}
+	
+//	public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//		return true
+//	}
+//	
+//	public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//		if editingStyle == .delete {
+//			TrelloManager.shared.deleteTask(for: self.tasks[indexPath.row].id)
+//			self.tasks.remove(at: indexPath.row)
+//			tableView.beginUpdates()
+//			tableView.deleteRows(at: [indexPath], with: .fade)
+//			tableView.endUpdates()
+//		}
+//	}
 }
 
 // MARK: - Text alert
@@ -102,8 +114,10 @@ extension ListViewController {
 			guard textField.text!.count != 0 else {
 				return
 			}
-            self.tasks.append(TrelloTask(name: textField.text!))
-            TrelloManager.shared.addTask(for: self.id!, name: textField.text!)
+			self.tasks.append(TrelloTask(name: textField.text!))
+			let indexPath = IndexPath(row: self.tasks.count - 1, section: 0)
+			self.customView.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+			TrelloManager.shared.addTask(for: self.id!, name: textField.text!)
 		})
 		alertController.addAction(doneAction)
 		present(alertController, animated: true, completion: nil)

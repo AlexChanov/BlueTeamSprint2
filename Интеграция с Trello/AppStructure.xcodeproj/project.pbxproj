@@ -25,6 +25,10 @@
 		7870234D237CB34E00B93766 /* AuthorizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7870234C237CB34E00B93766 /* AuthorizationVC.swift */; };
 		A438A175237986EE000651BE /* TextDataUpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */; };
 		A45CBD3D237BF31A005C9B72 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45CBD3C237BF31A005C9B72 /* GradientButton.swift */; };
+		A4BC2AA723805E78007DC07A /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC2AA623805E78007DC07A /* EditNoteView.swift */; };
+		A4BC2AAA23805EC7007DC07A /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC2AA923805EC7007DC07A /* NewNoteViewController.swift */; };
+		A4BC2AAC23805F16007DC07A /* FireBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC2AAB23805F16007DC07A /* FireBaseService.swift */; };
+		A4BC2AAE23805F5E007DC07A /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC2AAD23805F5E007DC07A /* NoteModel.swift */; };
 		A4EC3DC023794020003764C9 /* NestedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */; };
 		A4EC3DC123794020003764C9 /* UsefulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB823794020003764C9 /* UsefulCell.swift */; };
 		A4EC3DC223794020003764C9 /* AddButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC3DB923794020003764C9 /* AddButtonViewController.swift */; };
@@ -37,7 +41,6 @@
 		C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294042375D0C80077AD8A /* MyTabBarController.swift */; };
 		C94294092375D2350077AD8A /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94294082375D2350077AD8A /* NotesViewController.swift */; };
 		C942940B2375D23F0077AD8A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942940A2375D23F0077AD8A /* SettingsViewController.swift */; };
-		C942940D2375DA830077AD8A /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942940C2375DA830077AD8A /* EditNoteViewController.swift */; };
 		C952FAE72375ECAF009DB26C /* HelperUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C952FAE62375ECAF009DB26C /* HelperUserDefaults.swift */; };
 		C960C50D2375A54F002703DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960C50C2375A54F002703DC /* AppDelegate.swift */; };
 		C960C5142375A555002703DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C960C5132375A555002703DC /* Assets.xcassets */; };
@@ -68,6 +71,10 @@
 		7870234C237CB34E00B93766 /* AuthorizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVC.swift; sourceTree = "<group>"; };
 		A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDataUpdateProtocol.swift; sourceTree = "<group>"; };
 		A45CBD3C237BF31A005C9B72 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		A4BC2AA623805E78007DC07A /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
+		A4BC2AA923805EC7007DC07A /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		A4BC2AAB23805F16007DC07A /* FireBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseService.swift; sourceTree = "<group>"; };
+		A4BC2AAD23805F5E007DC07A /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		A4EC3DB723794020003764C9 /* NestedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedTableViewCell.swift; sourceTree = "<group>"; };
 		A4EC3DB823794020003764C9 /* UsefulCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulCell.swift; sourceTree = "<group>"; };
 		A4EC3DB923794020003764C9 /* AddButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +87,6 @@
 		C94294042375D0C80077AD8A /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		C94294082375D2350077AD8A /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		C942940A2375D23F0077AD8A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		C942940C2375DA830077AD8A /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 		C952FAE62375ECAF009DB26C /* HelperUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperUserDefaults.swift; sourceTree = "<group>"; };
 		C960C5092375A54F002703DC /* AppStructure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStructure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960C50C2375A54F002703DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,8 +116,9 @@
 			children = (
 				C94294082375D2350077AD8A /* NotesViewController.swift */,
 				1CE273A823781EB600198E7F /* NotesTableViewCell.swift */,
-				C942940C2375DA830077AD8A /* EditNoteViewController.swift */,
 				A438A174237986EE000651BE /* TextDataUpdateProtocol.swift */,
+				A4BC2AA823805E85007DC07A /* EditNoteViewController */,
+				A4BC2AAF23805F8C007DC07A /* Firebase */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -188,6 +195,24 @@
 				1CC23803237E8D55009C710E /* CustomView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A4BC2AA823805E85007DC07A /* EditNoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4BC2AA623805E78007DC07A /* EditNoteView.swift */,
+				A4BC2AA923805EC7007DC07A /* NewNoteViewController.swift */,
+			);
+			path = EditNoteViewController;
+			sourceTree = "<group>";
+		};
+		A4BC2AAF23805F8C007DC07A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				A4BC2AAB23805F16007DC07A /* FireBaseService.swift */,
+				A4BC2AAD23805F5E007DC07A /* NoteModel.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		A4EC3DB623793FE3003764C9 /* Tasks */ = {
@@ -361,17 +386,19 @@
 				C964637D2375C8E6000C33B5 /* SignInViewController.swift in Sources */,
 				1CE273A923781EB600198E7F /* NotesTableViewCell.swift in Sources */,
 				A4EC3DC123794020003764C9 /* UsefulCell.swift in Sources */,
+				A4BC2AAC23805F16007DC07A /* FireBaseService.swift in Sources */,
 				C94294092375D2350077AD8A /* NotesViewController.swift in Sources */,
 				1CC23804237E8D55009C710E /* CustomView.swift in Sources */,
 				A4EC3DC623794020003764C9 /* TasksCollectionViewController.swift in Sources */,
 				A438A175237986EE000651BE /* TextDataUpdateProtocol.swift in Sources */,
+				A4BC2AA723805E78007DC07A /* EditNoteView.swift in Sources */,
 				C960C51F2375A5D7002703DC /* RootViewController.swift in Sources */,
 				786F3163237EF77C00EEC665 /* TrelloRequestManager.swift in Sources */,
-				C942940D2375DA830077AD8A /* EditNoteViewController.swift in Sources */,
 				7870234D237CB34E00B93766 /* AuthorizationVC.swift in Sources */,
 				A4EC3DC223794020003764C9 /* AddButtonViewController.swift in Sources */,
 				C960C50D2375A54F002703DC /* AppDelegate.swift in Sources */,
 				78434457237D8D2C000BC559 /* TrelloTask.swift in Sources */,
+				A4BC2AAA23805EC7007DC07A /* NewNoteViewController.swift in Sources */,
 				A4EC3DC523794020003764C9 /* HasCustomViewProtocol.swift in Sources */,
 				A4EC3DC423794020003764C9 /* AddButtonView.swift in Sources */,
 				78406AD8237AD813008794F0 /* UIKitForProject.swift in Sources */,
@@ -379,6 +406,7 @@
 				78434453237D8CEA000BC559 /* TrelloTaskBoard.swift in Sources */,
 				785906BD237F28FF002A0650 /* TrelloManagerDelegate.swift in Sources */,
 				A45CBD3D237BF31A005C9B72 /* GradientButton.swift in Sources */,
+				A4BC2AAE23805F5E007DC07A /* NoteModel.swift in Sources */,
 				C94294052375D1240077AD8A /* MyTabBarController.swift in Sources */,
 				A4EC3DC723794020003764C9 /* ListViewController.swift in Sources */,
 			);
@@ -519,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F2ELRNS2ZG;
 				INFOPLIST_FILE = AppStructure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -537,7 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F2ELRNS2ZG;
 				INFOPLIST_FILE = AppStructure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -31,39 +31,21 @@ extension TasksViewController {
 		navigationItem.title = tabBarItem.title
 		addButtonViewControllerSetUp()
 		//
-        TrelloManager.shared.delegate = self
+		TrelloManager.shared.delegate = self
 		customView.collectionView.delegate = self
 		customView.collectionView.dataSource = self
 	}
 	public override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.navigationController?.navigationBar.isTranslucent = false
-        // load board
-        TrelloManager.shared.updateTaskBoard()
+		// load board
+		TrelloManager.shared.updateTaskBoard()
 	}
 	
 	public override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		self.navigationController?.navigationBar.isTranslucent = false
 	}
-}
-
-// MARK: - TrelloManager delegate
-extension TasksViewController: TrelloManagerDelegate {
-    
-    func updateBoard(with board: TrelloTaskBoard) {
-        for list in board.lists {
-            let listVC = ListViewController(with: list.name, id: list.id)
-            self.addChild(listVC)
-            listVC.didMove(toParent: self)
-            listVC.tasks = list.tasks
-            tasksChildViewControllers.append(listVC)
-        }
-        DispatchQueue.main.async {
-            self.customView.collectionView.reloadData()
-        }
-    }
-    
 }
 
 // MARK: - CollectionView delegate
@@ -88,7 +70,7 @@ extension TasksViewController:UICollectionViewDataSource {
 	public func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 2
 	}
-    
+
 	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		switch section {
 		case 0:
@@ -116,13 +98,32 @@ extension TasksViewController {
 		addChild(addButtonViewController)
 		addButtonViewController.didMove(toParent: self)
 		addButtonViewController.customView.buttonHandler = {[unowned self] title in
-			let indexPath = IndexPath(row: self.tasksChildViewControllers.count, section: 0)
-            let newTasksListViewController = ListViewController(with: title, id: "")
-			self.addChild(newTasksListViewController)
-			newTasksListViewController.didMove(toParent: self)
-			self.tasksChildViewControllers.append(newTasksListViewController)
-			self.customView.collectionView.insertItems(at: [indexPath])
-			self.customView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+			TrelloManager.shared.addList(for: title, completion: {[unowned self] id in
+				let indexPath = IndexPath(row: self.tasksChildViewControllers.count, section: 0)
+				DispatchQueue.main.async {
+					let newTasksListViewController = ListViewController(with: title, id: id)
+					self.addChild(newTasksListViewController)
+					newTasksListViewController.didMove(toParent: self)
+					self.tasksChildViewControllers.append(newTasksListViewController)
+					self.customView.collectionView.insertItems(at: [indexPath])
+				}
+			})
+		}
+	}
+}
+
+// MARK: - TrelloManager delegate
+extension TasksViewController: TrelloManagerDelegate {
+	func updateBoard(with board: TrelloTaskBoard) {
+		for list in board.lists {
+			DispatchQueue.main.async {
+				let listVC = ListViewController(with: list.name, id: list.id)
+				self.addChild(listVC)
+				listVC.didMove(toParent: self)
+				listVC.tasks = list.tasks
+				self.tasksChildViewControllers.append(listVC)
+				self.customView.collectionView.reloadData()
+			}
 		}
 	}
 }

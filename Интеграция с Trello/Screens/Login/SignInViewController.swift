@@ -9,28 +9,23 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-
-    let mainButton: GradientButton = {
+	// MARK: - UI
+	let mainButton: GradientButton = {
         let button = GradientButton.system(with: "Sign in")
         button.addTarget(self, action: #selector(myButtonTapped), for: .touchUpInside)
         return button
     }()
-
+	
+	//MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         buttonLayout()
         title = "Sign in"
     }
-
-    @objc
-    func myButtonTapped() {
-        modalTransitionStyle = .coverVertical
-        modalPresentationStyle = .fullScreen
-        present(AuthorizationVC(), animated: true, completion: nil)
-    }
 }
 
+// MARK: - Layout
 extension SignInViewController {
     private func buttonLayout() {
         view.addSubview(mainButton)
@@ -38,5 +33,15 @@ extension SignInViewController {
         mainButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         mainButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mainButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+}
+
+// MARK: - Selectors
+extension SignInViewController {
+    @objc
+    func myButtonTapped() {
+        modalTransitionStyle = .coverVertical
+        modalPresentationStyle = .fullScreen
+        present(AuthorizationVC(), animated: true, completion: nil)
     }
 }

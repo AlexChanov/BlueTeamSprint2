@@ -14,13 +14,11 @@ public final class TrelloManager {
     
     private init() { }
     
-    // =
-    
+    //
     var delegate: TrelloManagerDelegate?
     private var board = TrelloTaskBoard(dto: TrelloTaskBoardDTO())
     
-    // =
-    
+	//
     public func updateTaskBoard() {
         getBoard()
     }
@@ -79,11 +77,26 @@ public final class TrelloManager {
         addTask.resume()
     }
     
-    public func deleteTask(for taskID: String) {
-        let session = URLSession.shared
-        let deleteTask = session.dataTask(with: TrelloRequestManager.shared.deleteTask(for: taskID))
-        deleteTask.resume()
-    }
+	public func addList(for title: String, completion: @escaping (String) -> Void) {
+		let session = URLSession.shared
+		let addList = session.dataTask(with: TrelloRequestManager.shared.addList(for: board.id, name: title), completionHandler: {data, response, error in
+			guard let data = data, error == nil else {return}
+			do {
+				let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+				let id = dictionary["id"] as! String
+				completion(id)
+			} catch let error as NSError {
+                print(error)
+            }
+		})
+		addList.resume()
+	}
+	
+//    public func deleteTask(for taskID: String) {
+//        let session = URLSession.shared
+//        let deleteTask = session.dataTask(with: TrelloRequestManager.shared.deleteTask(for: taskID))
+//        deleteTask.resume()
+//    }
     
     public func deleteToken() {
         let session = URLSession.shared

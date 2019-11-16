@@ -14,7 +14,6 @@ public class AddButtonView: UIView {
 	public var buttonHandler: ((String) -> ())?
 
 	// MARK: - UI
-	// main button
 	private lazy var buttonHeightConstraint:NSLayoutConstraint = {
 		return NSLayoutConstraint(item: addButton,
 								  attribute: .height,
@@ -22,7 +21,7 @@ public class AddButtonView: UIView {
 								  toItem: nil,
 								  attribute: .height,
 								  multiplier: 1,
-								  constant: frame.height / 8)
+								  constant: frame.height / 10)
 	}()
 	private let addButton:UIButton = {
 		let button = UIButton.system(with: "Add")
@@ -30,7 +29,6 @@ public class AddButtonView: UIView {
 						 for: .touchUpInside)
 		return button
 	}()
-	// textfield
 	private let textField: UITextField = {
 		let textField = UITextField()
 		textField.placeholder = "List name?"
@@ -39,7 +37,6 @@ public class AddButtonView: UIView {
 		textField.translatesAutoresizingMaskIntoConstraints = false
 		return textField
 	}()
-	// textFieldBackgroundView - helper to avoid insets suffering
 	private let textFieldBackgroundView: UIView = {
 		let view = UIView()
 		view.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +46,6 @@ public class AddButtonView: UIView {
 		view.layer.borderWidth = 1
 		return view
 	}()
-	// cancel
 	private let cancelButton:UIButton = {
 		let button = UIButton()
 		button.setTitle("Cancel", for: .normal)
@@ -58,7 +54,6 @@ public class AddButtonView: UIView {
 						 for: .touchUpInside)
 		return button
 	}()
-	// done
 	private let doneButton:UIButton = {
 		let button = UIButton()
 		button.setTitle("Done", for: .normal)
@@ -67,7 +62,6 @@ public class AddButtonView: UIView {
 		button.titleLabel?.textAlignment = .right
 		return button
 	}()
-	// helper stacView for buttons above -> 2
 	private lazy var buttonsStackView: UIStackView = {
 		let stackView = UIStackView(arrangedSubviews: [cancelButton, doneButton])
 		stackView.translatesAutoresizingMaskIntoConstraints = false

@@ -100,7 +100,7 @@ extension PresentViewController {
         view.addSubview(trelloLabel)
         let margins = view.layoutMarginsGuide
         trelloLabel.bottomAnchor.constraint(lessThanOrEqualTo: blackCard.topAnchor, constant: -60).isActive = true
-        trelloLabel.heightAnchor.constraint(equalToConstant: 100)
+//        trelloLabel.heightAnchor.constraint(equalToConstant: 100)
         trelloLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
         trelloLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
     }
