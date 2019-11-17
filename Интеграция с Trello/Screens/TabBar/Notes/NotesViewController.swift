@@ -8,11 +8,17 @@
 import UIKit
 
 public class NotesViewController: UIViewController {
-	
+	var currentIndex = 0
 	var notesList = [NoteModel]() {
 		didSet {
 			DispatchQueue.main.async {
-				self.tableView.reloadData()
+				let lastRow = self.notesList.count != 0 ? oldValue.count : 0
+				var indexPaths = [IndexPath]()
+				for i in lastRow..<self.notesList.count {
+					let indexPath = IndexPath(row: i, section: 0)
+					indexPaths.append(indexPath)
+				}
+				self.tableView.insertRows(at: indexPaths, with: .fade)
 			}
 		}
 	}
@@ -108,6 +114,17 @@ extension NotesViewController:UITableViewDelegate {
 			FirebaseClient.deleteNote(index: serverIndex!, completion: {})
 		}
 	}
+	public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+		let currentOffset = scrollView.contentOffset.y
+		if currentOffset < 0 {
+			return
+		}
+		let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+		
+		if maximumOffset - currentOffset <= 10.0 {
+			self.loadNotes()
+		}
+	}
 }
 
 // MARK: - Text data protocol
@@ -137,11 +154,20 @@ extension NotesViewController:TextDataUpdateProtocol {
 extension NotesViewController {
 	private func loadNotes() {
 		FirebaseClient.getNotes(completion: {[unowned self] notes, _ in
-			self.notesList.removeAll()
-			for index in 0..<notes.count {
-				if let note = notes[index] {
-					let model = NoteModel(note, index: index)
-					self.notesList.append(model)
+			if self.currentIndex == notes.count {
+				return
+			}
+			let lastIndex = self.currentIndex + 10 <= notes.count ? self.currentIndex + 10 : notes.count
+			var tmp = [NoteModel]()
+			DispatchQueue.main.async {
+				for i in self.currentIndex..<lastIndex {
+					tmp.append(NoteModel(notes[i]!, index: i))
+				}
+				self.notesList += tmp
+				if lastIndex == notes.count {
+					self.currentIndex = notes.count
+				} else {
+					self.currentIndex += lastIndex
 				}
 			}
 		})
@@ -152,6 +178,17 @@ extension NotesViewController {
 extension NotesViewController {
 	@objc
 	private func refreshControlerSelector() {
+		var indexPaths = [IndexPath]()
+		for i in 0..<self.notesList.count {
+			let indexPath = IndexPath(row: i, section: 0)
+			indexPaths.append(indexPath)
+			
+		}
+		tableView.beginUpdates()
+		self.notesList.removeAll()
+		self.tableView.deleteRows(at: indexPaths, with: .fade)
+		tableView.endUpdates()
+		self.currentIndex = 0
 		self.loadNotes()
 		refreshControl.endRefreshing()
 	}

@@ -156,7 +156,7 @@ class FirebaseClient {
 
     // MARK: - Upload Image
 	class func uploadNew(image: UIImage, handler: @escaping (String) -> Void) {
-		let compressedImage = image.jpegData(compressionQuality: 25)
+		let compressedImage = image.jpegData(compressionQuality: 0)
 		let url = URL(string: "https://www.googleapis.com/upload/storage/v1/b/blueteamtrello.appspot.com/o/?uploadType=media&name=\(arc4random()).jpg")!
 		var request = URLRequest(url: url)
 		request.httpMethod = "POST"
