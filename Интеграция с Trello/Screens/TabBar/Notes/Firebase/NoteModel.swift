@@ -13,10 +13,10 @@ class NoteModel:NSObject {
 	var text: String!
 	var image: UIImage?
 	var imageUrl: String!
-	init(_ note: Note, index: Int) {
+	init(_ note: Note, serverIndex: Int) {
 		self.text = note.body
 		self.imageUrl = note.imageUrl
-		self.serverIndex = index
+		self.serverIndex = serverIndex
 	}
 
 	init(note:String, image:UIImage) {

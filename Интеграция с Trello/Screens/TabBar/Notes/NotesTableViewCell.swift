@@ -99,9 +99,12 @@ extension NotesTableViewCell {
 				guard let image = UIImage(data: data) else {
 					return
 				}
-				self.noteModel.image = image
+				guard let noteModel = self.noteModel else {
+					return
+				}
+				noteModel.image = image
 				DispatchQueue.main.async {
-					self.imageButton.setImage(self.noteModel.image!, for: .normal)
+					self.imageButton.setImage(noteModel.image!, for: .normal)
 					self.activityView.removeFromSuperview()
 				}
 			}

@@ -8,20 +8,9 @@
 import UIKit
 
 public class NotesViewController: UIViewController {
-	var currentIndex = 0
-	var notesList = [NoteModel]() {
-		didSet {
-			DispatchQueue.main.async {
-				let lastRow = self.notesList.count != 0 ? oldValue.count : 0
-				var indexPaths = [IndexPath]()
-				for i in lastRow..<self.notesList.count {
-					let indexPath = IndexPath(row: i, section: 0)
-					indexPaths.append(indexPath)
-				}
-				self.tableView.insertRows(at: indexPaths, with: .fade)
-			}
-		}
-	}
+	var notesList = [NoteModel]()
+	var notesCached = [NoteModel]()
+	private var serverNotesQuantity = 0
 
 	// MARK: - UI
 	private let refreshControl = UIRefreshControl()
@@ -41,13 +30,16 @@ public class NotesViewController: UIViewController {
 	// MARK: - Lifecycle
 	override public func viewDidLoad() {
 		super.viewDidLoad()
+//		for i in 0..<40 {
+//			FirebaseClient.putNote(index: i, noteBody: "Note -> \(i)", imageUrl: "https://www.googleapis.com/download/storage/v1/b/blueteamtrello.appspot.com/o/1635488747.jpg?generation=1574101948309306&alt=media", completion: {_,_ in})
+//		}
 		self.navigationItem.title = "Заметки"
 		setupLayout()
 		tableView.refreshControl = refreshControl
 		refreshControl.addTarget(self, action: #selector(refreshControlerSelector), for: .valueChanged)
 		tableView.dataSource = self
 		tableView.delegate = self
-		loadNotes()
+		startLoad()
 		view.backgroundColor = .white
 		navigationItem.title = "Заметки"
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
@@ -106,7 +98,6 @@ extension NotesViewController:UITableViewDelegate {
 	public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			let serverIndex = notesList[indexPath.row].serverIndex
-			print(notesList[indexPath.row].imageUrl!)
 			tableView.beginUpdates()
 			self.tableView.deleteRows(at: [indexPath], with: .fade)
 			self.notesList.remove(at: indexPath.row)
@@ -121,8 +112,8 @@ extension NotesViewController:UITableViewDelegate {
 		}
 		let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 		
-		if maximumOffset - currentOffset <= 10.0 {
-			self.loadNotes()
+		if maximumOffset - currentOffset <= 50 {
+			loadNotes()
 		}
 	}
 }
@@ -131,46 +122,64 @@ extension NotesViewController:UITableViewDelegate {
 extension NotesViewController:TextDataUpdateProtocol {
 	public func addText(data text: String,
 						image: UIImage) {
-		let index:Int
-		if notesList.count == 0 {
-			index = 0
-		} else {
-			index = notesList[notesList.count - 1].serverIndex! + 1
-		}
 		let noteModel = NoteModel(note: text,
 								  image: image)
-		noteModel.serverIndex = index
+		noteModel.serverIndex = serverNotesQuantity
+
 		self.notesList.append(noteModel)
+		self.tableView.reloadData()
 		FirebaseClient.uploadNew(image: image, handler: {imageUrl in
-		FirebaseClient.putNote(index: index,
+			FirebaseClient.putNote(index: self.serverNotesQuantity,
 								   noteBody: text,
 								   imageUrl: imageUrl,
-								   completion: {_,_ in})
+								   completion: {_,_ in
+				self.serverNotesQuantity += 1
+			})
 		})
 	}
 }
 
 // MARk: - Firebas
 extension NotesViewController {
-	private func loadNotes() {
+	private func startLoad() {
 		FirebaseClient.getNotes(completion: {[unowned self] notes, _ in
-			if self.currentIndex == notes.count {
-				return
-			}
-			let lastIndex = self.currentIndex + 10 <= notes.count ? self.currentIndex + 10 : notes.count
-			var tmp = [NoteModel]()
-			DispatchQueue.main.async {
-				for i in self.currentIndex..<lastIndex {
-					tmp.append(NoteModel(notes[i]!, index: i))
-				}
-				self.notesList += tmp
-				if lastIndex == notes.count {
-					self.currentIndex = notes.count
-				} else {
-					self.currentIndex += lastIndex
+			self.serverNotesQuantity = notes.count
+			for (index, note) in notes.enumerated() {
+				if let note = note {
+					DispatchQueue.main.async {
+						let noteModel = NoteModel(note, serverIndex: index)
+						if index >= 10 && self.notesList.count >= 10 {
+							self.notesCached.append(noteModel)
+						} else {
+							let indexPath = IndexPath(row: self.notesList.count - 1, section: 0)
+							self.notesList.append(noteModel)
+							self.tableView.beginUpdates()
+							self.tableView.insertRows(at: [indexPath], with: .fade)
+							self.tableView.endUpdates()
+						}
+					}
 				}
 			}
 		})
+	}
+	private func loadNotes() {
+		if self.notesCached.isEmpty {
+			return
+		} else {
+			var kek = 0
+			for (index, note) in self.notesCached.enumerated() {
+				if index + kek == 20 {
+					break
+				}
+				let indexPath = IndexPath(row: self.notesList.count, section: 0)
+				self.tableView.beginUpdates()
+				self.notesList.append(note)
+				self.tableView.insertRows(at: [indexPath], with: .fade)
+				self.tableView.endUpdates()
+				self.notesCached.remove(at: index - kek)
+				kek += 1
+			}
+		}
 	}
 }
 
@@ -179,17 +188,16 @@ extension NotesViewController {
 	@objc
 	private func refreshControlerSelector() {
 		var indexPaths = [IndexPath]()
-		for i in 0..<self.notesList.count {
-			let indexPath = IndexPath(row: i, section: 0)
+		for (index, _) in self.notesList.enumerated() {
+			let indexPath = IndexPath(row: index, section: 0)
 			indexPaths.append(indexPath)
-			
 		}
 		tableView.beginUpdates()
 		self.notesList.removeAll()
-		self.tableView.deleteRows(at: indexPaths, with: .fade)
+		self.tableView.deleteRows(at: indexPaths, with: .automatic)
+		self.tableView.reloadData()
 		tableView.endUpdates()
-		self.currentIndex = 0
-		self.loadNotes()
+		self.startLoad()
 		refreshControl.endRefreshing()
 	}
 }
