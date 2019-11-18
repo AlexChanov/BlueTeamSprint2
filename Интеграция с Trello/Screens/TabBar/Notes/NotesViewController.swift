@@ -31,7 +31,7 @@ public class NotesViewController: UIViewController {
 	override public func viewDidLoad() {
 		super.viewDidLoad()
 //		for i in 0..<40 {
-//			FirebaseClient.putNote(index: i, noteBody: "Note -> \(i)", imageUrl: "https://www.googleapis.com/download/storage/v1/b/blueteamtrello.appspot.com/o/1635488747.jpg?generation=1574101948309306&alt=media", completion: {_,_ in})
+//			FirebaseClient.putNote(index: i, noteBody: "Note -> \(i)", imageUrl: "https://www.googleapis.com/download/storage/v1/b/blueteamtrello.appspot.com/o/3926344245.jpg?generation=1574110508536393&alt=media", completion: {_,_ in})
 //		}
 		self.navigationItem.title = "Заметки"
 		setupLayout()

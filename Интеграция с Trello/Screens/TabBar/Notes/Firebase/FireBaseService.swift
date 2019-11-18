@@ -156,7 +156,7 @@ class FirebaseClient {
 
     // MARK: - Upload Image
 	class func uploadNew(image: UIImage, handler: @escaping (String) -> Void) {
-		let compressedImage = image.jpegData(compressionQuality: 0)
+		let compressedImage = image.jpegData(compressionQuality: 0.0)
 		let url = URL(string: "https://www.googleapis.com/upload/storage/v1/b/blueteamtrello.appspot.com/o/?uploadType=media&name=\(arc4random()).jpg")!
 		var request = URLRequest(url: url)
 		request.httpMethod = "POST"
@@ -174,15 +174,13 @@ class FirebaseClient {
 		}).resume()
 	}
 	
-//	class func deleteImage(name: String) {
-//        let url = URL(string: name)!
+//	class func deleteImage(imageUrl: String) {
+//        let url = URL(string: imageUrl)!
 //        var request = URLRequest(url: url)
 //        request.httpMethod = "DELETE"
 //        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//
 //        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-//            print("Deleted image: \(name)")
+//			print("Deleted image: \(imageUrl)")
 //        }
 //        task.resume()
 //    }
